@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+Charts in Pods
+Pods-MotoricaStart in Pods, depends on:
+Charts in Pods (explicit)

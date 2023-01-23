@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52B6D39B1FDD80F0004B2614 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6D39A1FDD80F0004B2614 /* AppDelegate.swift */; };
+		52B6D3A51FDD80F0004B2614 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B6D3A31FDD80F0004B2614 /* LaunchScreen.storyboard */; };
+		52B6D3AD1FDD810A004B2614 /* ScanItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6D3AC1FDD810A004B2614 /* ScanItem.swift */; };
+		52B6D3AF1FDD81C2004B2614 /* DataManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6D3AE1FDD81C2004B2614 /* DataManger.swift */; };
+		52B6D3B11FDD8D3F004B2614 /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6D3B01FDD8D3F004B2614 /* ToDoTableViewCell.swift */; };
+		52B6D3B31FDD8D52004B2614 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6D3B21FDD8D52004B2614 /* ScanViewController.swift */; };
+		52DCC2431FEC3AEE006B2A74 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DCC2421FEC3AEE006B2A74 /* ContainerViewController.swift */; };
+		593009750A7117232010DBD5 /* Pods_Clothes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FBBADC5B6C218FB918C100A /* Pods_Clothes.framework */; };
+		651711302926262000FB00AE /* DialogSelectScaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6517112F2926262000FB00AE /* DialogSelectScaleViewController.swift */; };
+		6517113229262C5A00FB00AE /* DialogConfirmationScaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6517113129262C5A00FB00AE /* DialogConfirmationScaleViewController.swift */; };
+		651711342927AE6100FB00AE /* DialogResetINDYViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651711332927AE6100FB00AE /* DialogResetINDYViewController.swift */; };
+		652D4ADF268DC0FE007D0700 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D4ADE268DC0FE007D0700 /* Quote.swift */; };
+		652D4AE2268DC12A007D0700 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D4AE1268DC12A007D0700 /* ModelController.swift */; };
+		653F397527A68F980042AC88 /* AAPLMathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 653F397427A68F980042AC88 /* AAPLMathUtilities.m */; };
+		653F397827A690610042AC88 /* AAPLMeshData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 653F397727A690610042AC88 /* AAPLMeshData.mm */; };
+		653F397C27A698BC0042AC88 /* Meshes in Resources */ = {isa = PBXBuildFile; fileRef = 653F397B27A698BC0042AC88 /* Meshes */; };
+		653F398427A698D90042AC88 /* temple.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 653F397E27A698D90042AC88 /* temple.vsh */; };
+		653F398527A698D90042AC88 /* reflect.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 653F397F27A698D90042AC88 /* reflect.fsh */; };
+		653F398627A698D90042AC88 /* temple.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 653F398027A698D90042AC88 /* temple.fsh */; };
+		653F398727A698D90042AC88 /* select_fragment_shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 653F398127A698D90042AC88 /* select_fragment_shader.fsh */; };
+		653F398827A698D90042AC88 /* select_vertex_shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 653F398227A698D90042AC88 /* select_vertex_shader.vsh */; };
+		653F398927A698D90042AC88 /* reflect.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 653F398327A698D90042AC88 /* reflect.vsh */; };
+		6543880727A5A7390065E4A7 /* AAPLOpenGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6543880627A5A7390065E4A7 /* AAPLOpenGLViewController.m */; };
+		6543880A27A5AB7D0065E4A7 /* AAPLOpenGLRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6543880927A5AB7C0065E4A7 /* AAPLOpenGLRenderer.m */; };
+		6548D9E82689CB7F00ABC38C /* SaveObjectString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548D9E72689CB7F00ABC38C /* SaveObjectString.swift */; };
+		6548D9EA268B545300ABC38C /* GestureSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548D9E9268B545300ABC38C /* GestureSettingsViewController.swift */; };
+		6548D9EC268CB3CB00ABC38C /* GribSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548D9EB268CB3CB00ABC38C /* GribSettingsViewController.swift */; };
+		65504600286F632200B41BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 655045FF286F632200B41BEB /* Main.storyboard */; };
+		657D0EC22793FE1300066215 /* Grib3DSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657D0EC12793FE1300066215 /* Grib3DSettingsViewController.swift */; };
+		659AE25427AA9522003821CF /* AdvancedSettinsFesthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659AE25327AA9522003821CF /* AdvancedSettinsFesthViewController.swift */; };
+		65EB56F0291E7C2900FFC9A6 /* DialogRecalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB56EF291E7C2900FFC9A6 /* DialogRecalibrationViewController.swift */; };
+		65EB56F329238E9100FFC9A6 /* DialogCalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB56F229238E9100FFC9A6 /* DialogCalibrationViewController.swift */; };
+		65EB56F529239E1600FFC9A6 /* DialogResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB56F429239E1600FFC9A6 /* DialogResetViewController.swift */; };
+		65F865B6286C8F7F0035CF64 /* DialogFingersDelayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F865B5286C8F7F0035CF64 /* DialogFingersDelayViewController.swift */; };
+		65FFAA7F28800A78006C8733 /* DialogCalibrationStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFAA7E28800A78006C8733 /* DialogCalibrationStatusViewController.swift */; };
+		FA6DEC82263C73AF00ED9775 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6DEC81263C73AE00ED9775 /* Assets.xcassets */; };
+		FA6DEC84263D4D8E00ED9775 /* SaveObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DEC83263D4D8E00ED9775 /* SaveObject.swift */; };
+		FA74B90C263C2C3F00BC1CBA /* AdvencedSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA74B90B263C2C3F00BC1CBA /* AdvencedSettingsViewController.swift */; };
+		FA829675263A8DCA000DD2C3 /* font_open_sans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA829674263A8DCA000DD2C3 /* font_open_sans.ttf */; };
+		FA8C6FD926276E1B003E70B8 /* SensorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C6FD826276E1B003E70B8 /* SensorsViewController.swift */; };
+		FAE46566263995DE006CA3EF /* SampleGattAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE46565263995DE006CA3EF /* SampleGattAttributes.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		154BC15803ABC070AD399EC8 /* Pods-MotoricaStart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotoricaStart.debug.xcconfig"; path = "Target Support Files/Pods-MotoricaStart/Pods-MotoricaStart.debug.xcconfig"; sourceTree = "<group>"; };
+		527D36A755163E499581A318 /* Pods-Clothes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clothes.release.xcconfig"; path = "Target Support Files/Pods-Clothes/Pods-Clothes.release.xcconfig"; sourceTree = "<group>"; };
+		52B6D3971FDD80F0004B2614 /* Clothes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clothes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B6D39A1FDD80F0004B2614 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52B6D3A41FDD80F0004B2614 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52B6D3A61FDD80F0004B2614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52B6D3AC1FDD810A004B2614 /* ScanItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanItem.swift; sourceTree = "<group>"; };
+		52B6D3AE1FDD81C2004B2614 /* DataManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManger.swift; sourceTree = "<group>"; };
+		52B6D3B01FDD8D3F004B2614 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
+		52B6D3B21FDD8D52004B2614 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		52DCC2421FEC3AEE006B2A74 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		6517112F2926262000FB00AE /* DialogSelectScaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogSelectScaleViewController.swift; sourceTree = "<group>"; };
+		6517113129262C5A00FB00AE /* DialogConfirmationScaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogConfirmationScaleViewController.swift; sourceTree = "<group>"; };
+		651711332927AE6100FB00AE /* DialogResetINDYViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogResetINDYViewController.swift; sourceTree = "<group>"; };
+		652D4ADE268DC0FE007D0700 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		652D4AE1268DC12A007D0700 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		653F397427A68F980042AC88 /* AAPLMathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLMathUtilities.m; sourceTree = "<group>"; };
+		653F397627A68FAF0042AC88 /* AAPLMathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLMathUtilities.h; sourceTree = "<group>"; };
+		653F397727A690610042AC88 /* AAPLMeshData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AAPLMeshData.mm; sourceTree = "<group>"; };
+		653F397927A690730042AC88 /* AAPLMeshData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLMeshData.h; sourceTree = "<group>"; };
+		653F397A27A690E20042AC88 /* AAPLCommonDefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCommonDefinitions.h; sourceTree = "<group>"; };
+		653F397B27A698BC0042AC88 /* Meshes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Meshes; sourceTree = "<group>"; };
+		653F397E27A698D90042AC88 /* temple.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = temple.vsh; sourceTree = "<group>"; };
+		653F397F27A698D90042AC88 /* reflect.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = reflect.fsh; sourceTree = "<group>"; };
+		653F398027A698D90042AC88 /* temple.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = temple.fsh; sourceTree = "<group>"; };
+		653F398127A698D90042AC88 /* select_fragment_shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = select_fragment_shader.fsh; sourceTree = "<group>"; };
+		653F398227A698D90042AC88 /* select_vertex_shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = select_vertex_shader.vsh; sourceTree = "<group>"; };
+		653F398327A698D90042AC88 /* reflect.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = reflect.vsh; sourceTree = "<group>"; };
+		6543880527A5A7390065E4A7 /* MotoricaStart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MotoricaStart-Bridging-Header.h"; sourceTree = "<group>"; };
+		6543880627A5A7390065E4A7 /* AAPLOpenGLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLOpenGLViewController.m; sourceTree = "<group>"; };
+		6543880827A5A9690065E4A7 /* AAPLOpenGLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLOpenGLViewController.h; sourceTree = "<group>"; };
+		6543880927A5AB7C0065E4A7 /* AAPLOpenGLRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLOpenGLRenderer.m; sourceTree = "<group>"; };
+		6543880B27A5AB9D0065E4A7 /* AAPLOpenGLRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLOpenGLRenderer.h; sourceTree = "<group>"; };
+		6543880C27A5ABB20065E4A7 /* AAPLGLHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLGLHeaders.h; sourceTree = "<group>"; };
+		6548D9E72689CB7F00ABC38C /* SaveObjectString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveObjectString.swift; sourceTree = "<group>"; };
+		6548D9E9268B545300ABC38C /* GestureSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureSettingsViewController.swift; sourceTree = "<group>"; };
+		6548D9EB268CB3CB00ABC38C /* GribSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GribSettingsViewController.swift; sourceTree = "<group>"; };
+		655045FF286F632200B41BEB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		657D0EC12793FE1300066215 /* Grib3DSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grib3DSettingsViewController.swift; sourceTree = "<group>"; };
+		659AE25327AA9522003821CF /* AdvancedSettinsFesthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettinsFesthViewController.swift; sourceTree = "<group>"; };
+		65EB56EF291E7C2900FFC9A6 /* DialogRecalibrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogRecalibrationViewController.swift; sourceTree = "<group>"; };
+		65EB56F1292381E100FFC9A6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		65EB56F229238E9100FFC9A6 /* DialogCalibrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogCalibrationViewController.swift; sourceTree = "<group>"; };
+		65EB56F429239E1600FFC9A6 /* DialogResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogResetViewController.swift; sourceTree = "<group>"; };
+		65F865B5286C8F7F0035CF64 /* DialogFingersDelayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogFingersDelayViewController.swift; sourceTree = "<group>"; };
+		65FFAA7E28800A78006C8733 /* DialogCalibrationStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogCalibrationStatusViewController.swift; sourceTree = "<group>"; };
+		6FBBADC5B6C218FB918C100A /* Pods_Clothes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clothes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB0AF837A79D895C64FD22FD /* Pods-MotoricaStart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotoricaStart.release.xcconfig"; path = "Target Support Files/Pods-MotoricaStart/Pods-MotoricaStart.release.xcconfig"; sourceTree = "<group>"; };
+		BCB31D6514119398FADF267E /* Pods-Clothes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clothes.debug.xcconfig"; path = "Target Support Files/Pods-Clothes/Pods-Clothes.debug.xcconfig"; sourceTree = "<group>"; };
+		FA6DEC81263C73AE00ED9775 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA6DEC83263D4D8E00ED9775 /* SaveObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveObject.swift; sourceTree = "<group>"; };
+		FA74B90B263C2C3F00BC1CBA /* AdvencedSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvencedSettingsViewController.swift; sourceTree = "<group>"; };
+		FA829674263A8DCA000DD2C3 /* font_open_sans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font_open_sans.ttf; sourceTree = "<group>"; };
+		FA8C6FD826276E1B003E70B8 /* SensorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsViewController.swift; sourceTree = "<group>"; };
+		FAE46565263995DE006CA3EF /* SampleGattAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleGattAttributes.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52B6D3941FDD80F0004B2614 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				593009750A7117232010DBD5 /* Pods_Clothes.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B5955F9781B597609D44C8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6FBBADC5B6C218FB918C100A /* Pods_Clothes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52B6D38E1FDD80F0004B2614 = {
+			isa = PBXGroup;
+			children = (
+				52B6D3991FDD80F0004B2614 /* Clothes */,
+				6543880D27A5ABCA0065E4A7 /* Common */,
+				52B6D3981FDD80F0004B2614 /* Products */,
+				79443FF0FA944FD61C844F13 /* Pods */,
+				3B5955F9781B597609D44C8D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		52B6D3981FDD80F0004B2614 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52B6D3971FDD80F0004B2614 /* Clothes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52B6D3991FDD80F0004B2614 /* Clothes */ = {
+			isa = PBXGroup;
+			children = (
+				6543880427A5A71B0065E4A7 /* OpenGL */,
+				652D4AE0268DC105007D0700 /* test transition */,
+				52B6D39A1FDD80F0004B2614 /* AppDelegate.swift */,
+				655045FF286F632200B41BEB /* Main.storyboard */,
+				652D4AE3268DE97D007D0700 /* ViewControllers */,
+				652D4AE4268DE9CF007D0700 /* Utility */,
+				652D4AE5268DEA20007D0700 /* Res */,
+				52B6D3A61FDD80F0004B2614 /* Info.plist */,
+			);
+			path = Clothes;
+			sourceTree = "<group>";
+		};
+		652D4AE0268DC105007D0700 /* test transition */ = {
+			isa = PBXGroup;
+			children = (
+				652D4ADE268DC0FE007D0700 /* Quote.swift */,
+				652D4AE1268DC12A007D0700 /* ModelController.swift */,
+			);
+			path = "test transition";
+			sourceTree = "<group>";
+		};
+		652D4AE3268DE97D007D0700 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				52B6D3B21FDD8D52004B2614 /* ScanViewController.swift */,
+				FA8C6FD826276E1B003E70B8 /* SensorsViewController.swift */,
+				FA74B90B263C2C3F00BC1CBA /* AdvencedSettingsViewController.swift */,
+				659AE25327AA9522003821CF /* AdvancedSettinsFesthViewController.swift */,
+				6548D9E9268B545300ABC38C /* GestureSettingsViewController.swift */,
+				6548D9EB268CB3CB00ABC38C /* GribSettingsViewController.swift */,
+				657D0EC12793FE1300066215 /* Grib3DSettingsViewController.swift */,
+				65F865B5286C8F7F0035CF64 /* DialogFingersDelayViewController.swift */,
+				65FFAA7E28800A78006C8733 /* DialogCalibrationStatusViewController.swift */,
+				65EB56EF291E7C2900FFC9A6 /* DialogRecalibrationViewController.swift */,
+				65EB56F229238E9100FFC9A6 /* DialogCalibrationViewController.swift */,
+				65EB56F429239E1600FFC9A6 /* DialogResetViewController.swift */,
+				6517112F2926262000FB00AE /* DialogSelectScaleViewController.swift */,
+				6517113129262C5A00FB00AE /* DialogConfirmationScaleViewController.swift */,
+				651711332927AE6100FB00AE /* DialogResetINDYViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		652D4AE4268DE9CF007D0700 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FAE46565263995DE006CA3EF /* SampleGattAttributes.swift */,
+				52DCC2421FEC3AEE006B2A74 /* ContainerViewController.swift */,
+				52B6D3B01FDD8D3F004B2614 /* ToDoTableViewCell.swift */,
+				52B6D3AC1FDD810A004B2614 /* ScanItem.swift */,
+				FA6DEC83263D4D8E00ED9775 /* SaveObject.swift */,
+				6548D9E72689CB7F00ABC38C /* SaveObjectString.swift */,
+				52B6D3AE1FDD81C2004B2614 /* DataManger.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		652D4AE5268DEA20007D0700 /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				FA6DEC81263C73AE00ED9775 /* Assets.xcassets */,
+				52B6D3A31FDD80F0004B2614 /* LaunchScreen.storyboard */,
+				652D4AE6268DEA37007D0700 /* Fontes */,
+			);
+			path = Res;
+			sourceTree = "<group>";
+		};
+		652D4AE6268DEA37007D0700 /* Fontes */ = {
+			isa = PBXGroup;
+			children = (
+				FA829674263A8DCA000DD2C3 /* font_open_sans.ttf */,
+			);
+			path = Fontes;
+			sourceTree = "<group>";
+		};
+		653F397D27A698D90042AC88 /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				653F397E27A698D90042AC88 /* temple.vsh */,
+				653F397F27A698D90042AC88 /* reflect.fsh */,
+				653F398027A698D90042AC88 /* temple.fsh */,
+				653F398127A698D90042AC88 /* select_fragment_shader.fsh */,
+				653F398227A698D90042AC88 /* select_vertex_shader.vsh */,
+				653F398327A698D90042AC88 /* reflect.vsh */,
+			);
+			path = shaders;
+			sourceTree = "<group>";
+		};
+		6543880427A5A71B0065E4A7 /* OpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				6543880827A5A9690065E4A7 /* AAPLOpenGLViewController.h */,
+				6543880627A5A7390065E4A7 /* AAPLOpenGLViewController.m */,
+				6543880C27A5ABB20065E4A7 /* AAPLGLHeaders.h */,
+				6543880B27A5AB9D0065E4A7 /* AAPLOpenGLRenderer.h */,
+				6543880927A5AB7C0065E4A7 /* AAPLOpenGLRenderer.m */,
+				6543880527A5A7390065E4A7 /* MotoricaStart-Bridging-Header.h */,
+				653F397D27A698D90042AC88 /* shaders */,
+			);
+			path = OpenGL;
+			sourceTree = "<group>";
+		};
+		6543880D27A5ABCA0065E4A7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				653F397A27A690E20042AC88 /* AAPLCommonDefinitions.h */,
+				653F397927A690730042AC88 /* AAPLMeshData.h */,
+				653F397727A690610042AC88 /* AAPLMeshData.mm */,
+				653F397627A68FAF0042AC88 /* AAPLMathUtilities.h */,
+				653F397427A68F980042AC88 /* AAPLMathUtilities.m */,
+				653F397B27A698BC0042AC88 /* Meshes */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		79443FF0FA944FD61C844F13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				154BC15803ABC070AD399EC8 /* Pods-MotoricaStart.debug.xcconfig */,
+				BB0AF837A79D895C64FD22FD /* Pods-MotoricaStart.release.xcconfig */,
+				BCB31D6514119398FADF267E /* Pods-Clothes.debug.xcconfig */,
+				527D36A755163E499581A318 /* Pods-Clothes.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52B6D3961FDD80F0004B2614 /* Clothes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52B6D3A91FDD80F0004B2614 /* Build configuration list for PBXNativeTarget "Clothes" */;
+			buildPhases = (
+				D50B1843FCBF38E19A446A96 /* [CP] Check Pods Manifest.lock */,
+				52B6D3931FDD80F0004B2614 /* Sources */,
+				52B6D3941FDD80F0004B2614 /* Frameworks */,
+				52B6D3951FDD80F0004B2614 /* Resources */,
+				7B4DBF7CA69B0EC2461B05DA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Clothes;
+			productName = TodoApp;
+			productReference = 52B6D3971FDD80F0004B2614 /* Clothes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52B6D38F1FDD80F0004B2614 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 1250;
+				ORGANIZATIONNAME = "Brian Advent";
+				TargetAttributes = {
+					52B6D3961FDD80F0004B2614 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1250;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 52B6D3921FDD80F0004B2614 /* Build configuration list for PBXProject "Clothes" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ru,
+			);
+			mainGroup = 52B6D38E1FDD80F0004B2614;
+			productRefGroup = 52B6D3981FDD80F0004B2614 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52B6D3961FDD80F0004B2614 /* Clothes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52B6D3951FDD80F0004B2614 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653F398627A698D90042AC88 /* temple.fsh in Resources */,
+				653F398927A698D90042AC88 /* reflect.vsh in Resources */,
+				653F397C27A698BC0042AC88 /* Meshes in Resources */,
+				FA829675263A8DCA000DD2C3 /* font_open_sans.ttf in Resources */,
+				653F398427A698D90042AC88 /* temple.vsh in Resources */,
+				65504600286F632200B41BEB /* Main.storyboard in Resources */,
+				653F398727A698D90042AC88 /* select_fragment_shader.fsh in Resources */,
+				52B6D3A51FDD80F0004B2614 /* LaunchScreen.storyboard in Resources */,
+				653F398827A698D90042AC88 /* select_vertex_shader.vsh in Resources */,
+				FA6DEC82263C73AF00ED9775 /* Assets.xcassets in Resources */,
+				653F398527A698D90042AC88 /* reflect.fsh in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7B4DBF7CA69B0EC2461B05DA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Clothes/Pods-Clothes-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Clothes/Pods-Clothes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D50B1843FCBF38E19A446A96 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Clothes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52B6D3931FDD80F0004B2614 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65FFAA7F28800A78006C8733 /* DialogCalibrationStatusViewController.swift in Sources */,
+				6543880727A5A7390065E4A7 /* AAPLOpenGLViewController.m in Sources */,
+				FA74B90C263C2C3F00BC1CBA /* AdvencedSettingsViewController.swift in Sources */,
+				65F865B6286C8F7F0035CF64 /* DialogFingersDelayViewController.swift in Sources */,
+				52B6D39B1FDD80F0004B2614 /* AppDelegate.swift in Sources */,
+				653F397527A68F980042AC88 /* AAPLMathUtilities.m in Sources */,
+				6543880A27A5AB7D0065E4A7 /* AAPLOpenGLRenderer.m in Sources */,
+				52B6D3AD1FDD810A004B2614 /* ScanItem.swift in Sources */,
+				52B6D3AF1FDD81C2004B2614 /* DataManger.swift in Sources */,
+				65EB56F329238E9100FFC9A6 /* DialogCalibrationViewController.swift in Sources */,
+				FA8C6FD926276E1B003E70B8 /* SensorsViewController.swift in Sources */,
+				651711302926262000FB00AE /* DialogSelectScaleViewController.swift in Sources */,
+				52B6D3B11FDD8D3F004B2614 /* ToDoTableViewCell.swift in Sources */,
+				652D4AE2268DC12A007D0700 /* ModelController.swift in Sources */,
+				651711342927AE6100FB00AE /* DialogResetINDYViewController.swift in Sources */,
+				6548D9E82689CB7F00ABC38C /* SaveObjectString.swift in Sources */,
+				657D0EC22793FE1300066215 /* Grib3DSettingsViewController.swift in Sources */,
+				52DCC2431FEC3AEE006B2A74 /* ContainerViewController.swift in Sources */,
+				6548D9EA268B545300ABC38C /* GestureSettingsViewController.swift in Sources */,
+				65EB56F0291E7C2900FFC9A6 /* DialogRecalibrationViewController.swift in Sources */,
+				FAE46566263995DE006CA3EF /* SampleGattAttributes.swift in Sources */,
+				659AE25427AA9522003821CF /* AdvancedSettinsFesthViewController.swift in Sources */,
+				52B6D3B31FDD8D52004B2614 /* ScanViewController.swift in Sources */,
+				6517113229262C5A00FB00AE /* DialogConfirmationScaleViewController.swift in Sources */,
+				653F397827A690610042AC88 /* AAPLMeshData.mm in Sources */,
+				65EB56F529239E1600FFC9A6 /* DialogResetViewController.swift in Sources */,
+				FA6DEC84263D4D8E00ED9775 /* SaveObject.swift in Sources */,
+				652D4ADF268DC0FE007D0700 /* Quote.swift in Sources */,
+				6548D9EC268CB3CB00ABC38C /* GribSettingsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		52B6D3A31FDD80F0004B2614 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52B6D3A41FDD80F0004B2614 /* Base */,
+				65EB56F1292381E100FFC9A6 /* ru */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52B6D3A71FDD80F0004B2614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "GLES_SILENCE_DEPRECATION=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52B6D3A81FDD80F0004B2614 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "GLES_SILENCE_DEPRECATION=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52B6D3AA1FDD80F0004B2614 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCB31D6514119398FADF267E /* Pods-Clothes.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 15;
+				DEVELOPMENT_TEAM = R7K637DW83;
+				INFOPLIST_FILE = "$(SRCROOT)/Clothes/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.4.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romans.clothes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/motoricallc/Documents/iOs/clothes/Clothes/OpenGL/MotoricaStart-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		52B6D3AB1FDD80F0004B2614 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 527D36A755163E499581A318 /* Pods-Clothes.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 15;
+				DEVELOPMENT_TEAM = R7K637DW83;
+				INFOPLIST_FILE = "$(SRCROOT)/Clothes/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.4.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romans.clothes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/motoricallc/Documents/iOs/clothes/Clothes/OpenGL/MotoricaStart-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52B6D3921FDD80F0004B2614 /* Build configuration list for PBXProject "Clothes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B6D3A71FDD80F0004B2614 /* Debug */,
+				52B6D3A81FDD80F0004B2614 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52B6D3A91FDD80F0004B2614 /* Build configuration list for PBXNativeTarget "Clothes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B6D3AA1FDD80F0004B2614 /* Debug */,
+				52B6D3AB1FDD80F0004B2614 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52B6D38F1FDD80F0004B2614 /* Project object */;
+}

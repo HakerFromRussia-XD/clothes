@@ -1078,10 +1078,10 @@ import Charts
             if (item.key == SensorsViewController.sampleGattAttributes.OPEN_ADVANCED_SETTINGS) {
                 if (Int(item.value) != 1) {
                     lockAdvancedSettings = true
-                    advancedSettingsBtn.isHidden = true
+//                    advancedSettingsBtn.isHidden = true
                 } else {
                     lockAdvancedSettings = false
-                    advancedSettingsBtn.isHidden = false
+//                    advancedSettingsBtn.isHidden = false
                 }
             }
             if (item.key == SensorsViewController.sampleGattAttributes.SCALE_FIRST_SET) {

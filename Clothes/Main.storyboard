@@ -18,7 +18,7 @@
         <!--Dialog Fingers Delay View Controller-->
         <scene sceneID="h51-jb-hXk">
             <objects>
-                <viewController storyboardIdentifier="DialogFingersDelayViewController" id="fes-Ok-Rgk" customClass="DialogFingersDelayViewController" customModule="MotoricaStart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DialogFingersDelayViewController" id="fes-Ok-Rgk" customClass="DialogFingersDelayViewController" customModule="Clothes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hyH-iQ-71V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,7 +376,7 @@
             <objects>
                 <viewController storyboardIdentifier="VCG_3D" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8ac-Bo-dpK" customClass="AAPLOpenGLViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s0P-uX-j1L" userLabel="Container View" customClass="AAPLOpenGLView">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4G8-7y-1cF">
@@ -411,7 +411,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wA-8j-gaC">
-                                <rect key="frame" x="137" y="751" width="140" height="42"/>
+                                <rect key="frame" x="137" y="780" width="140" height="42"/>
                                 <color key="backgroundColor" name="lineColor_open"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="0rm-1z-1rj"/>
@@ -470,9 +470,9 @@
         <!--Grib Settings View Controller-->
         <scene sceneID="yle-8Y-B7h">
             <objects>
-                <viewController storyboardIdentifier="VCG" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aib-Hj-f7h" customClass="GribSettingsViewController" customModule="MotoricaStart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VCG" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aib-Hj-f7h" customClass="GribSettingsViewController" customModule="Clothes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MSv-BH-T6e" userLabel="Container View" customClass="Gri">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6IL-6k-7GD">
@@ -903,7 +903,7 @@
         <!--Gesture Settings View Controller-->
         <scene sceneID="PUh-o3-5tn">
             <objects>
-                <viewController id="FTP-On-beG" customClass="GestureSettingsViewController" customModule="MotoricaStart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FTP-On-beG" customClass="GestureSettingsViewController" customModule="Clothes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gCH-bz-TS9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1195,7 +1195,7 @@
         <!--Advenced Settings Festh View Controller-->
         <scene sceneID="UvO-0p-OYH">
             <objects>
-                <viewController id="8dK-dB-jLl" customClass="AdvencedSettingsFesthViewController" customModule="MotoricaStart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8dK-dB-jLl" customClass="AdvencedSettingsFesthViewController" customModule="Clothes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CX8-nn-7dD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2007,7 +2007,7 @@
         <!--Advenced Settings View Controller-->
         <scene sceneID="Q3w-42-v1g">
             <objects>
-                <viewController id="2fk-UD-iDY" customClass="AdvencedSettingsViewController" customModule="MotoricaStart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2fk-UD-iDY" customClass="AdvencedSettingsViewController" customModule="Clothes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xbk-o2-ZGM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2112,9 +2112,6 @@
                                 <state key="normal" title="RESET TO FACTORY SETTINGS">
                                     <color key="titleColor" name="white"/>
                                 </state>
-                                <connections>
-                                    <segue destination="m3S-tj-PrR" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="vJY-hO-2RQ"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" verticalHuggingPriority="251" text="prosthesis size: S" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mri-RO-c1C">
                                 <rect key="frame" x="245" y="299" width="150" height="33"/>
@@ -2201,7 +2198,7 @@
         <!--Sensors View Controller-->
         <scene sceneID="Drx-NJ-862">
             <objects>
-                <viewController storyboardIdentifier="VC2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kHv-tU-4WS" customClass="SensorsViewController" customModule="MotoricaStart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kHv-tU-4WS" customClass="SensorsViewController" customModule="Clothes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" semanticContentAttribute="spatial" insetsLayoutMarginsFromSafeArea="NO" id="Wb8-fy-3PA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2495,7 +2492,6 @@
                                         <state key="normal" title="Button" image="settings_gestures"/>
                                         <connections>
                                             <action selector="perehod2:" destination="kHv-tU-4WS" eventType="touchUpInside" id="rPR-FY-xOz"/>
-                                            <segue destination="FTP-On-beG" kind="show" id="NRb-7K-Ydn"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mP-Id-d9o" userLabel="goToAdvancedSettings">
@@ -2612,10 +2608,6 @@
                         <outlet property="swapSensSwitch" destination="Wd3-t4-yfe" id="bUA-TJ-SZc"/>
                         <outlet property="swapSensText" destination="k9D-s9-E05" id="Ihz-lL-lsK"/>
                         <outlet property="unlockAdvancedSettings" destination="iAz-7X-iSC" id="ZFD-de-zGt"/>
-                        <segue destination="2fk-UD-iDY" kind="show" identifier="goToAdvencesSettings" id="MX0-vC-fti"/>
-                        <segue destination="8dK-dB-jLl" kind="show" identifier="goToAdvencesSettingsFesth" id="XMa-Gw-GXF"/>
-                        <segue destination="WLf-Tv-vb5" kind="presentation" identifier="showSceleAcceptVC" destinationCreationSelector="testPerehod:" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="yj2-BC-ZfS"/>
-                        <segue destination="nEJ-0v-0aZ" kind="presentation" identifier="showSelectScaleVC" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="zP6-ey-c9J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UB6-rM-pCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2625,7 +2617,7 @@
         <!--SEARCH...-->
         <scene sceneID="jXJ-Mx-INU">
             <objects>
-                <tableViewController id="CAH-Dg-tK3" customClass="ScanViewController" customModule="MotoricaStart" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="CAH-Dg-tK3" customClass="ScanViewController" customModule="Clothes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" allowsMultipleSelection="YES" rowHeight="71" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" contentViewInsetsToSafeArea="NO" id="2Ul-LM-rg1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2638,7 +2630,7 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="71" id="FRI-3t-foD" customClass="ToDoTableViewCell" customModule="MotoricaStart" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="71" id="FRI-3t-foD" customClass="ToDoTableViewCell" customModule="Clothes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="93.5" width="414" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FRI-3t-foD" id="vu2-NU-M9X">
@@ -2701,7 +2693,7 @@
         <!--Dialog Calibration Status View Controller-->
         <scene sceneID="rQc-mN-bAc">
             <objects>
-                <viewController storyboardIdentifier="TestViewController" id="7uM-Nu-FFJ" customClass="DialogCalibrationStatusViewController" customModule="MotoricaStart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TestViewController" id="7uM-Nu-FFJ" customClass="DialogCalibrationStatusViewController" customModule="Clothes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jcU-Hd-yWQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3102,7 +3094,7 @@
         <!--Dialog Recalibration View Controller-->
         <scene sceneID="Njo-xi-xet">
             <objects>
-                <viewController storyboardIdentifier="RecalibrationViewController" id="LPD-Qh-qsj" customClass="DialogRecalibrationViewController" customModule="MotoricaStart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecalibrationViewController" id="LPD-Qh-qsj" customClass="DialogRecalibrationViewController" customModule="Clothes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="guK-xS-qA9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3222,7 +3214,7 @@
         <!--Dialog Calibration View Controller-->
         <scene sceneID="6e5-zI-M5e">
             <objects>
-                <viewController storyboardIdentifier="CalibrationViewController" id="Um2-V4-lPQ" customClass="DialogCalibrationViewController" customModule="MotoricaStart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalibrationViewController" id="Um2-V4-lPQ" customClass="DialogCalibrationViewController" customModule="Clothes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BXL-BC-2H9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3342,7 +3334,7 @@
         <!--Dialog Reset View Controller-->
         <scene sceneID="zQW-tn-Ndy">
             <objects>
-                <viewController storyboardIdentifier="ResetViewController" id="gYp-a2-0WA" customClass="DialogResetViewController" customModule="MotoricaStart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResetViewController" id="gYp-a2-0WA" customClass="DialogResetViewController" customModule="Clothes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xgo-I1-UWZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3462,7 +3454,7 @@
         <!--Dialog Select Scale View Controller-->
         <scene sceneID="inc-WG-Dai">
             <objects>
-                <viewController storyboardIdentifier="SelectScaleViewController" id="nEJ-0v-0aZ" customClass="DialogSelectScaleViewController" customModule="MotoricaStart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectScaleViewController" id="nEJ-0v-0aZ" customClass="DialogSelectScaleViewController" customModule="Clothes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nxb-F5-KY1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3575,7 +3567,7 @@
         <!--Dialog Confirmation Scale View Controller-->
         <scene sceneID="3Hk-EQ-ZkC">
             <objects>
-                <viewController storyboardIdentifier="AcceptScaleViewController" id="WLf-Tv-vb5" customClass="DialogConfirmationScaleViewController" customModule="MotoricaStart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AcceptScaleViewController" id="WLf-Tv-vb5" customClass="DialogConfirmationScaleViewController" customModule="Clothes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kPj-j9-koE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3696,7 +3688,7 @@
         <!--Dialog ResetINDY View Controller-->
         <scene sceneID="0N6-iM-35g">
             <objects>
-                <viewController storyboardIdentifier="ResetINDYViewController" id="m3S-tj-PrR" customClass="DialogResetINDYViewController" customModule="MotoricaStart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResetINDYViewController" id="m3S-tj-PrR" customClass="DialogResetINDYViewController" customModule="Clothes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6lf-gk-ztk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

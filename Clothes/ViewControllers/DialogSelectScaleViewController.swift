@@ -38,7 +38,7 @@ class DialogSelectScaleViewController: UIViewController {
     @IBAction func acceptSelectScaleDialog(_ sender: Any) {
         dismiss(animated: true, completion: nil)
         dataForSensorsViewController["resultDialog"] = String("selectScaleAccept")
-        NotificationCenter.default.post(name: .notificationDataDialogToSensorsView, object: nil, userInfo: self.dataForSensorsViewController)
+        
     }
     
     

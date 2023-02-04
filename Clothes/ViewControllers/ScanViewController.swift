@@ -42,6 +42,7 @@ import CoreBluetooth
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         centralManager.delegate = self
+        fukeDeviceConnect()
     }
 
 
@@ -170,230 +171,7 @@ import CoreBluetooth
                             self.dataForSensorsViewController["scale_flags_and_revers_and_one_channel"] = String(Int(bytes[11]))
                         }
                     }
-                    
 
-                    if (myDevice?.name == sampleGattAttributes.FESTH_NAME){
-                        if (characteristic.uuid.uuidString == sampleGattAttributes.MIO_MEASUREMENT_NEW) {
-                            self.dataForSensorsViewController["sens_1"] = String(Int(bytes[0]))
-                            self.dataForSensorsViewController["sens_2"] = String(Int(bytes[1]))
-                            if (!reseivedFirstNotifyData) {
-                                self.dataForSensorsViewController["reseivedFirstNotifyData"] = "true"
-                                reseivedFirstNotifyData = true
-                                print("Первое получение нотификации")
-                            }
-                        }
-                        if (characteristic.uuid.uuidString == sampleGattAttributes.SENS_VERSION_NEW) {
-                            print ("Получили данные из характеристики SENS_VERSION_NEW: "+String(Int(bytes[0])))
-                            self.dataForSensorsViewController["numderBytes"] = String(Int(10))
-                            self.dataForSensorsViewController["sens_num"] = String(Int(bytes[0]))
-                            self.dataForSensorsViewController["bms_num"] = String(100)
-                        }
-                        if (characteristic.uuid.uuidString == sampleGattAttributes.DRIVER_VERSION_NEW) {
-                            var temp = 0
-                            temp = (Int(bytes[1]) - 48)*100 + (Int(bytes[3]) - 48)*10 + (Int(bytes[4]) - 48)
-                            self.dataForSensorsViewController["driver_num"] = String(temp)
-                            print ("Получили данные из характеристики DRIVER_VERSION_NEW: "+String(temp))
-
-                        }
-                        if (characteristic.uuid.uuidString == sampleGattAttributes.OPEN_THRESHOLD_NEW) {
-                            self.dataForSensorsViewController["open_ch_num"] = String(Int(bytes[0]))
-                            print ("Получили данные из характеристики OPEN_THRESHOLD_NEW: "+String(Int(bytes[0])))
-                        }
-                        if (characteristic.uuid.uuidString == sampleGattAttributes.CLOSE_THRESHOLD_NEW) {
-                            self.dataForSensorsViewController["close_ch_num"] = String(Int(bytes[0]))
-                            print ("Получили данные из характеристики CLOSE_THRESHOLD_NEW: "+String(Int(bytes[0])))
-                        }
-                        if (characteristic.uuid.uuidString == sampleGattAttributes.SENS_OPTIONS_NEW) {
-                            self.dataForSensorsViewController["corellator_noise_threshold_1_num"] = String(Int(bytes[0]))
-                            self.dataForSensorsViewController["corellator_noise_threshold_2_num"] = String(Int(bytes[13]))
-                            print ("Получили данные из характеристики SENS_OPTIONS_NEW: "+String(Int(bytes[0])))
-                        }
-                        if (characteristic.uuid.uuidString == sampleGattAttributes.SET_REVERSE_NEW) {
-                            self.dataForSensorsViewController["set_reverse"] = String(Int(bytes[0]))
-                            print ("Получили данные из характеристики SET_REVERSE_NEW: "+String(Int(bytes[0])))
-                        }
-                        if (characteristic.uuid.uuidString == sampleGattAttributes.SET_ONE_CHANNEL_NEW) {
-                            self.dataForSensorsViewController["set_one_channel"] = String(Int(bytes[0]))
-                            print ("Получили данные из характеристики SET_ONE_CHANNEL_NEW: "+String(Int(bytes[0])))
-                        }
-                        if (characteristic.uuid.uuidString == sampleGattAttributes.ADD_GESTURE_NEW) {
-                            var data: String = ""
-                            for i in 0...86 {
-                                data += String(Int(bytes[i]))+" "
-                            }
-                            saveDataString(key: sampleGattAttributes.ADD_GESTURE_NEW, value: data)
-                            self.dataForSensorsViewController["add_gesture"] = data
-                            for i in 0...6 {
-                                for j in 0...1 {
-                                    for k in 0...5 {
-                                        gestureTable[i][j][k] = Int(bytes[i*12 + j*6 + k])
-                                        if(k == 4) { gestureTable[i][j][k] = Int(bytes[i * 12 + j * 6 + k]) }
-                                        if(k == 5) { gestureTable[i][j][k] = Int(bytes[i * 12 + j * 6 + k]) }
-                                    }
-                                }
-                            }
-                            byteEnabledGesture = Int(bytes[84])
-                            byteActiveGesture = Int(bytes[85])
-                            print ("Получили данные из характеристики ADD_GESTURE_NEW: "+data)
-                        }
-                        if (characteristic.uuid.uuidString == sampleGattAttributes.CALIBRATION_NEW) {
-                            print ("Получили данные из характеристики CALIBRATION_NEW: ")
-                        }
-                        if (characteristic.uuid.uuidString == sampleGattAttributes.SHUTDOWN_CURRENT_NEW) {
-                            for i in 0...5 {
-                                saveDataString(key: "SHUTDOWN_CURRENT_NEW_"+String(i+1), value: String(Int(bytes[i])))
-                            }
-                            print ("Получили данные из характеристики SHUTDOWN_CURRENT_NEW: ")
-                        }
-                        if (characteristic.uuid.uuidString == sampleGattAttributes.SET_GESTURE_NEW) {
-                            print ("Получили данные из характеристики SET_GESTURE_NEW: ")
-                        }
-                    } else {
-                        if (myDevice?.name == sampleGattAttributes.FESTX_NAME) {
-//                            print("Получение данных от FEST-X с характеристики: " + characteristic.uuid.uuidString)
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.MIO_MEASUREMENT_NEW_VM) {
-                                self.dataForSensorsViewController["sens_1"] = String(Int(bytes[0]))
-                                self.dataForSensorsViewController["sens_2"] = String(Int(bytes[1]))
-                                self.dataForSensorsViewController["gesture_use_num"] = String(Int(bytes[2])+1)
-                                
-//                                if (bytes[10] != 0 && bytes[11] != 0) {
-//                                    print("Команда пришедшая в ответ: " + String(format: "%02X", bytes[11]) + String(format: "%02X", bytes[10]))
-                                    self.dataForSensorsViewController["expected_id_command"] = String(format: "%02X", bytes[11]) + String(format: "%02X", bytes[10])
-//                                }
-                                if (!reseivedFirstNotifyData) {
-                                    self.dataForSensorsViewController["reseivedFirstNotifyData"] = "true"
-                                    reseivedFirstNotifyData = true
-                                    print("Первое получение нотификации ")
-                                }
-                            }
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.SENS_VERSION_NEW_VM) {
-                                print ("Получили данные из характеристики SENS_VERSION_NEW_VM: "+String(Int(bytes[0])))
-                                self.dataForSensorsViewController["numderBytes"] = String(Int(10))
-                                self.dataForSensorsViewController["sens_num"] = String(Int(bytes[0]))
-                                self.dataForSensorsViewController["bms_num"] = String(100)
-                            }
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.DRIVER_VERSION_NEW) {
-                                var temp = 0
-                                temp = (Int(bytes[1]) - 48)*100 + (Int(bytes[3]) - 48)*10 + (Int(bytes[4]) - 48)
-                                self.dataForSensorsViewController["driver_num"] = String(temp)
-                                print ("Получили данные из характеристики DRIVER_VERSION_NEW: "+String(temp))
-                            }
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.DRIVER_VERSION_NEW_VM) {
-                                var temp = 0
-                                temp = (Int(bytes[1]) - 48)*100 + (Int(bytes[3]) - 48)*10 + (Int(bytes[4]) - 48)
-                                self.dataForSensorsViewController["driver_num"] = String(temp)
-                                print ("Получили данные из характеристики DRIVER_VERSION_NEW_VM: "+String(temp))
-                            }
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.OPEN_THRESHOLD_NEW_VM) {
-                                self.dataForSensorsViewController["open_ch_num"] = String(Int(bytes[0]))
-                                print ("Получили данные из характеристики OPEN_THRESHOLD_NEW: "+String(Int(bytes[0])))
-                            }
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.CLOSE_THRESHOLD_NEW_VM) {
-                                self.dataForSensorsViewController["close_ch_num"] = String(Int(bytes[0]))
-                                print ("Получили данные из характеристики CLOSE_THRESHOLD_NEW: "+String(Int(bytes[0])))
-                            }
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.SENS_OPTIONS_NEW_VM) {
-                                self.dataForSensorsViewController["corellator_noise_threshold_1_num"] = String(Int(bytes[0]))
-                                self.dataForSensorsViewController["corellator_noise_threshold_2_num"] = String(Int(bytes[13]))
-                                print ("Получили данные из характеристики SENS_OPTIONS_NEW: "+String(Int(bytes[0])))
-                            }
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.SET_REVERSE_NEW_VM) {
-                                self.dataForSensorsViewController["set_reverse"] = String(Int(bytes[0]))
-                                print ("Получили данные из характеристики SET_REVERSE_NEW: "+String(Int(bytes[0])))
-                            }
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.SET_ONE_CHANNEL_NEW_VM) {
-                                self.dataForSensorsViewController["set_one_channel"] = String(Int(bytes[0]))
-                                print ("Получили данные из характеристики SET_ONE_CHANNEL_NEW: "+String(Int(bytes[0])))
-                            }
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.ADD_GESTURE_NEW_VM) {
-                                var data: String = ""
-                                for i in 0...86 {
-                                    data += String(Int(bytes[i]))+" "
-                                }
-                                saveDataString(key: sampleGattAttributes.ADD_GESTURE_NEW, value: data)
-                                self.dataForSensorsViewController["add_gesture"] = data
-                                for i in 0...6 {
-                                    for j in 0...1 {
-                                        for k in 0...5 {
-                                            gestureTable[i][j][k] = Int(bytes[i*12 + j*6 + k])
-                                            if(k == 4) { gestureTable[i][j][k] = Int(bytes[i * 12 + j * 6 + k]) }
-                                            if(k == 5) { gestureTable[i][j][k] = Int(bytes[i * 12 + j * 6 + k]) }
-                                        }
-                                    }
-                                }
-                                byteEnabledGesture = Int(bytes[84])
-//                                saveDataString(key: sampleGattAttributes.GESTURE_USE_NUM, value: String(Int(bytes[85])))
-                                print ("Получили данные из характеристики ADD_GESTURE_NEW: "+data)
-                            }
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.CALIBRATION_NEW_VM) {
-                                print ("Получили данные из характеристики CALIBRATION_NEW: ")
-                            }
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.SHUTDOWN_CURRENT_NEW_VM) {
-                                for i in 0...5 {
-                                    saveDataString(key: "SHUTDOWN_CURRENT_NEW_"+String(i+1), value: String(Int(bytes[i])))
-                                }
-                                print ("Получили данные из характеристики SHUTDOWN_CURRENT_NEW: ")
-                            }
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.SET_GESTURE_NEW_VM) {
-                                print ("Получили данные из характеристики SET_GESTURE_NEW: ")
-                            }
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.ROTATION_GESTURE_NEW_VM) {
-                                self.dataForSensorsViewController["gesture_switching_by_sensors"] = String(Int(bytes[0]))
-                                self.dataForSensorsViewController["time_at_rest"] = String(Int(bytes[2]))
-                                print ("Получили данные из характеристики ROTATION_GESTURE_NEW_VM: gesture_switching_by_sensors=\(Int(bytes[0])) time_at_rest=\(Int(bytes[2]))")
-                            }
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.CHANGE_GESTURE_NEW_VM) {
-                                print ("Получили данные из характеристики CHANGE_GESTURE_NEW_VM ")
-                                for i in 13...18 {
-                                    saveDataString(key: "GESTURE_OPEN_DELAY_FINGER"+String(i-12), value: String(Int(bytes[i])))
-                                }
-                                for i in 19...24 {
-                                    saveDataString(key: "GESTURE_CLOSE_DELAY_FINGER"+String(i-18), value: String(Int(bytes[i])))
-                                }
-                                NotificationCenter.default.post(name: .notificationReseiveBLEDataDelay, object: nil, userInfo: self.dataForDelayFingersViewController)
-                            }
-                            if (characteristic.uuid.uuidString == sampleGattAttributes.STATUS_CALIBRATION_NEW_VM) {
-                                var chislo: Int = 5
-                                chislo = chislo << 8
-                                print ("Получили данные из характеристики STATUS_CALIBRATION_NEW_VM \(chislo)")
-                                
-                                
-                                for i in 0...5 {
-                                    var temp: String = ""
-                                    if (Int(bytes[36+i]) == 6) { temp = "calibrated" }
-                                    if (Int(bytes[36+i]) == 5) { temp = "screw pulled" }
-                                    if (Int(bytes[36+i]) == 4) { temp = "motor scrolls" }
-                                    if (Int(bytes[36+i]) == 3) { temp = "there is no encoder" }
-                                    if (Int(bytes[36+i]) == 2) { temp = "there is no motor" }
-                                    if (Int(bytes[36+i]) == 1) { temp = "calibration in progress" }
-                                    if (Int(bytes[36+i]) == 0) { temp = "not calibrated" }
-                                    saveDataString(key: "CALIBRATION_STATUS_FINGER"+String(i+1), value: String(temp))
-                                }
-                                for i in 0...5 {
-                                    let temp = Int(bytes[(i*4)]) +
-                                               (Int(bytes[1+(i*4)]) << 8) +
-                                               (Int(bytes[2+(i*4)]) << 16) +
-                                               (Int(bytes[3+(i*4)]) << 24)
-                                    saveDataString(key: "CALIBRATION_STATUS_ENCODER_FINGER"+String(i+1), value: String(temp))
-                                }
-                                for i in 0...5 {
-                                    let temp = Int(bytes[24+(i*2)]) +
-                                               (Int(bytes[25+(i*2)]) << 8)
-                                    saveDataString(key: "CALIBRATION_STATUS_CURRENT_FINGER"+String(i+1), value: String(temp))
-                                }
-                                NotificationCenter.default.post(name: .notificationReseiveBLEDataCalibrationStatus, object: nil, userInfo: self.dataForCalibrationStatusViewController)
-                            }
-                        } else {
-                            self.dataForSensorsViewController["sens_1"] = String(Int(bytes[1]))
-                            self.dataForSensorsViewController["sens_2"] = String(Int(bytes[2]))
-                        }
-                    }
-                    //исправление бага с именем HRSTM прилетающем от Родиона вместо INDY
-                    if (myDevice?.name == "HRSTM") {
-                        self.dataForSensorsViewController["deviceName"] = "INDY"
-                    } else {
-                        self.dataForSensorsViewController["deviceName"] = myDevice?.name
-                    }
                     NotificationCenter.default.post(name: .notificationReseiveBLEData, object: nil, userInfo: self.dataForSensorsViewController)
             })
         }
@@ -433,16 +211,11 @@ import CoreBluetooth
         }
         performSegue(withIdentifier: "goSensorsSettings", sender: nil)
     }
-    @IBAction func tupTestButton(_ sender: UIButton) {
-        print("tup test button")
-//        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TestViewController") as? TestViewController
-//        vc?.modalPresentationStyle = .fullScreen
-//
-//        
-//        self.present(vc!, animated: true, completion: nil)
-//        let vc = TestViewController()
+    func fukeDeviceConnect() {
+        saveDataString(key: sampleGattAttributes.DEVICE_NAME, value: "Test connection")
+        performSegue(withIdentifier: "goSensorsSettings", sender: nil)
     }
-    
+
     private func saveDataString(key: String, value: String) {
         let saveObjectString = SaveObjectString(key: key, value: value)
         print("save   key: \(key) value: \(value)")

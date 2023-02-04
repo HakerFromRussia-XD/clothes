@@ -15,9 +15,6 @@
 		52B6D3B31FDD8D52004B2614 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6D3B21FDD8D52004B2614 /* ScanViewController.swift */; };
 		52DCC2431FEC3AEE006B2A74 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DCC2421FEC3AEE006B2A74 /* ContainerViewController.swift */; };
 		593009750A7117232010DBD5 /* Pods_Clothes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FBBADC5B6C218FB918C100A /* Pods_Clothes.framework */; };
-		651711302926262000FB00AE /* DialogSelectScaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6517112F2926262000FB00AE /* DialogSelectScaleViewController.swift */; };
-		6517113229262C5A00FB00AE /* DialogConfirmationScaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6517113129262C5A00FB00AE /* DialogConfirmationScaleViewController.swift */; };
-		651711342927AE6100FB00AE /* DialogResetINDYViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651711332927AE6100FB00AE /* DialogResetINDYViewController.swift */; };
 		652D4ADF268DC0FE007D0700 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D4ADE268DC0FE007D0700 /* Quote.swift */; };
 		652D4AE2268DC12A007D0700 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D4AE1268DC12A007D0700 /* ModelController.swift */; };
 		653F397527A68F980042AC88 /* AAPLMathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 653F397427A68F980042AC88 /* AAPLMathUtilities.m */; };
@@ -32,19 +29,9 @@
 		6543880727A5A7390065E4A7 /* AAPLOpenGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6543880627A5A7390065E4A7 /* AAPLOpenGLViewController.m */; };
 		6543880A27A5AB7D0065E4A7 /* AAPLOpenGLRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6543880927A5AB7C0065E4A7 /* AAPLOpenGLRenderer.m */; };
 		6548D9E82689CB7F00ABC38C /* SaveObjectString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548D9E72689CB7F00ABC38C /* SaveObjectString.swift */; };
-		6548D9EA268B545300ABC38C /* GestureSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548D9E9268B545300ABC38C /* GestureSettingsViewController.swift */; };
-		6548D9EC268CB3CB00ABC38C /* GribSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6548D9EB268CB3CB00ABC38C /* GribSettingsViewController.swift */; };
 		65504600286F632200B41BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 655045FF286F632200B41BEB /* Main.storyboard */; };
-		657D0EC22793FE1300066215 /* Grib3DSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657D0EC12793FE1300066215 /* Grib3DSettingsViewController.swift */; };
-		659AE25427AA9522003821CF /* AdvancedSettinsFesthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659AE25327AA9522003821CF /* AdvancedSettinsFesthViewController.swift */; };
-		65EB56F0291E7C2900FFC9A6 /* DialogRecalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB56EF291E7C2900FFC9A6 /* DialogRecalibrationViewController.swift */; };
-		65EB56F329238E9100FFC9A6 /* DialogCalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB56F229238E9100FFC9A6 /* DialogCalibrationViewController.swift */; };
-		65EB56F529239E1600FFC9A6 /* DialogResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EB56F429239E1600FFC9A6 /* DialogResetViewController.swift */; };
-		65F865B6286C8F7F0035CF64 /* DialogFingersDelayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F865B5286C8F7F0035CF64 /* DialogFingersDelayViewController.swift */; };
-		65FFAA7F28800A78006C8733 /* DialogCalibrationStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FFAA7E28800A78006C8733 /* DialogCalibrationStatusViewController.swift */; };
 		FA6DEC82263C73AF00ED9775 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA6DEC81263C73AE00ED9775 /* Assets.xcassets */; };
 		FA6DEC84263D4D8E00ED9775 /* SaveObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DEC83263D4D8E00ED9775 /* SaveObject.swift */; };
-		FA74B90C263C2C3F00BC1CBA /* AdvencedSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA74B90B263C2C3F00BC1CBA /* AdvencedSettingsViewController.swift */; };
 		FA829675263A8DCA000DD2C3 /* font_open_sans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA829674263A8DCA000DD2C3 /* font_open_sans.ttf */; };
 		FA8C6FD926276E1B003E70B8 /* SensorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C6FD826276E1B003E70B8 /* SensorsViewController.swift */; };
 		FAE46566263995DE006CA3EF /* SampleGattAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE46565263995DE006CA3EF /* SampleGattAttributes.swift */; };
@@ -62,9 +49,6 @@
 		52B6D3B01FDD8D3F004B2614 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		52B6D3B21FDD8D52004B2614 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		52DCC2421FEC3AEE006B2A74 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
-		6517112F2926262000FB00AE /* DialogSelectScaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogSelectScaleViewController.swift; sourceTree = "<group>"; };
-		6517113129262C5A00FB00AE /* DialogConfirmationScaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogConfirmationScaleViewController.swift; sourceTree = "<group>"; };
-		651711332927AE6100FB00AE /* DialogResetINDYViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogResetINDYViewController.swift; sourceTree = "<group>"; };
 		652D4ADE268DC0FE007D0700 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		652D4AE1268DC12A007D0700 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		653F397427A68F980042AC88 /* AAPLMathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLMathUtilities.m; sourceTree = "<group>"; };
@@ -86,23 +70,13 @@
 		6543880B27A5AB9D0065E4A7 /* AAPLOpenGLRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLOpenGLRenderer.h; sourceTree = "<group>"; };
 		6543880C27A5ABB20065E4A7 /* AAPLGLHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLGLHeaders.h; sourceTree = "<group>"; };
 		6548D9E72689CB7F00ABC38C /* SaveObjectString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveObjectString.swift; sourceTree = "<group>"; };
-		6548D9E9268B545300ABC38C /* GestureSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureSettingsViewController.swift; sourceTree = "<group>"; };
-		6548D9EB268CB3CB00ABC38C /* GribSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GribSettingsViewController.swift; sourceTree = "<group>"; };
 		655045FF286F632200B41BEB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		657D0EC12793FE1300066215 /* Grib3DSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grib3DSettingsViewController.swift; sourceTree = "<group>"; };
-		659AE25327AA9522003821CF /* AdvancedSettinsFesthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettinsFesthViewController.swift; sourceTree = "<group>"; };
-		65EB56EF291E7C2900FFC9A6 /* DialogRecalibrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogRecalibrationViewController.swift; sourceTree = "<group>"; };
 		65EB56F1292381E100FFC9A6 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		65EB56F229238E9100FFC9A6 /* DialogCalibrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogCalibrationViewController.swift; sourceTree = "<group>"; };
-		65EB56F429239E1600FFC9A6 /* DialogResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogResetViewController.swift; sourceTree = "<group>"; };
-		65F865B5286C8F7F0035CF64 /* DialogFingersDelayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogFingersDelayViewController.swift; sourceTree = "<group>"; };
-		65FFAA7E28800A78006C8733 /* DialogCalibrationStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogCalibrationStatusViewController.swift; sourceTree = "<group>"; };
 		6FBBADC5B6C218FB918C100A /* Pods_Clothes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clothes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB0AF837A79D895C64FD22FD /* Pods-MotoricaStart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MotoricaStart.release.xcconfig"; path = "Target Support Files/Pods-MotoricaStart/Pods-MotoricaStart.release.xcconfig"; sourceTree = "<group>"; };
 		BCB31D6514119398FADF267E /* Pods-Clothes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clothes.debug.xcconfig"; path = "Target Support Files/Pods-Clothes/Pods-Clothes.debug.xcconfig"; sourceTree = "<group>"; };
 		FA6DEC81263C73AE00ED9775 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA6DEC83263D4D8E00ED9775 /* SaveObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveObject.swift; sourceTree = "<group>"; };
-		FA74B90B263C2C3F00BC1CBA /* AdvencedSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvencedSettingsViewController.swift; sourceTree = "<group>"; };
 		FA829674263A8DCA000DD2C3 /* font_open_sans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = font_open_sans.ttf; sourceTree = "<group>"; };
 		FA8C6FD826276E1B003E70B8 /* SensorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorsViewController.swift; sourceTree = "<group>"; };
 		FAE46565263995DE006CA3EF /* SampleGattAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleGattAttributes.swift; sourceTree = "<group>"; };
@@ -176,19 +150,6 @@
 			children = (
 				52B6D3B21FDD8D52004B2614 /* ScanViewController.swift */,
 				FA8C6FD826276E1B003E70B8 /* SensorsViewController.swift */,
-				FA74B90B263C2C3F00BC1CBA /* AdvencedSettingsViewController.swift */,
-				659AE25327AA9522003821CF /* AdvancedSettinsFesthViewController.swift */,
-				6548D9E9268B545300ABC38C /* GestureSettingsViewController.swift */,
-				6548D9EB268CB3CB00ABC38C /* GribSettingsViewController.swift */,
-				657D0EC12793FE1300066215 /* Grib3DSettingsViewController.swift */,
-				65F865B5286C8F7F0035CF64 /* DialogFingersDelayViewController.swift */,
-				65FFAA7E28800A78006C8733 /* DialogCalibrationStatusViewController.swift */,
-				65EB56EF291E7C2900FFC9A6 /* DialogRecalibrationViewController.swift */,
-				65EB56F229238E9100FFC9A6 /* DialogCalibrationViewController.swift */,
-				65EB56F429239E1600FFC9A6 /* DialogResetViewController.swift */,
-				6517112F2926262000FB00AE /* DialogSelectScaleViewController.swift */,
-				6517113129262C5A00FB00AE /* DialogConfirmationScaleViewController.swift */,
-				651711332927AE6100FB00AE /* DialogResetINDYViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -403,35 +364,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65FFAA7F28800A78006C8733 /* DialogCalibrationStatusViewController.swift in Sources */,
 				6543880727A5A7390065E4A7 /* AAPLOpenGLViewController.m in Sources */,
-				FA74B90C263C2C3F00BC1CBA /* AdvencedSettingsViewController.swift in Sources */,
-				65F865B6286C8F7F0035CF64 /* DialogFingersDelayViewController.swift in Sources */,
 				52B6D39B1FDD80F0004B2614 /* AppDelegate.swift in Sources */,
 				653F397527A68F980042AC88 /* AAPLMathUtilities.m in Sources */,
 				6543880A27A5AB7D0065E4A7 /* AAPLOpenGLRenderer.m in Sources */,
 				52B6D3AD1FDD810A004B2614 /* ScanItem.swift in Sources */,
 				52B6D3AF1FDD81C2004B2614 /* DataManger.swift in Sources */,
-				65EB56F329238E9100FFC9A6 /* DialogCalibrationViewController.swift in Sources */,
 				FA8C6FD926276E1B003E70B8 /* SensorsViewController.swift in Sources */,
-				651711302926262000FB00AE /* DialogSelectScaleViewController.swift in Sources */,
 				52B6D3B11FDD8D3F004B2614 /* ToDoTableViewCell.swift in Sources */,
 				652D4AE2268DC12A007D0700 /* ModelController.swift in Sources */,
-				651711342927AE6100FB00AE /* DialogResetINDYViewController.swift in Sources */,
 				6548D9E82689CB7F00ABC38C /* SaveObjectString.swift in Sources */,
-				657D0EC22793FE1300066215 /* Grib3DSettingsViewController.swift in Sources */,
 				52DCC2431FEC3AEE006B2A74 /* ContainerViewController.swift in Sources */,
-				6548D9EA268B545300ABC38C /* GestureSettingsViewController.swift in Sources */,
-				65EB56F0291E7C2900FFC9A6 /* DialogRecalibrationViewController.swift in Sources */,
 				FAE46566263995DE006CA3EF /* SampleGattAttributes.swift in Sources */,
-				659AE25427AA9522003821CF /* AdvancedSettinsFesthViewController.swift in Sources */,
 				52B6D3B31FDD8D52004B2614 /* ScanViewController.swift in Sources */,
-				6517113229262C5A00FB00AE /* DialogConfirmationScaleViewController.swift in Sources */,
 				653F397827A690610042AC88 /* AAPLMeshData.mm in Sources */,
-				65EB56F529239E1600FFC9A6 /* DialogResetViewController.swift in Sources */,
 				FA6DEC84263D4D8E00ED9775 /* SaveObject.swift in Sources */,
 				652D4ADF268DC0FE007D0700 /* Quote.swift in Sources */,
-				6548D9EC268CB3CB00ABC38C /* GribSettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,7 +37,6 @@ class AdvencedSettingsViewController: UIViewController {
         loadDataString()
         initUI()
         NotificationCenter.default.addObserver(self, selector: #selector(checkStateConnection), name: .notificationCheckStateConnection, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: .notificationUpdateAdvancedSettings, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(resultDialog), name: .notificationDataDialogs, object: nil)
     }
     

@@ -15,6 +15,7 @@
 		52B6D3B31FDD8D52004B2614 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6D3B21FDD8D52004B2614 /* ScanViewController.swift */; };
 		52DCC2431FEC3AEE006B2A74 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DCC2421FEC3AEE006B2A74 /* ContainerViewController.swift */; };
 		593009750A7117232010DBD5 /* Pods_Clothes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FBBADC5B6C218FB918C100A /* Pods_Clothes.framework */; };
+		650A1A00299106DB00F8B0FE /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650A19FF299106DB00F8B0FE /* CustomSlider.swift */; };
 		652D4ADF268DC0FE007D0700 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D4ADE268DC0FE007D0700 /* Quote.swift */; };
 		652D4AE2268DC12A007D0700 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652D4AE1268DC12A007D0700 /* ModelController.swift */; };
 		653F397527A68F980042AC88 /* AAPLMathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 653F397427A68F980042AC88 /* AAPLMathUtilities.m */; };
@@ -49,6 +50,7 @@
 		52B6D3B01FDD8D3F004B2614 /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		52B6D3B21FDD8D52004B2614 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		52DCC2421FEC3AEE006B2A74 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		650A19FF299106DB00F8B0FE /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		652D4ADE268DC0FE007D0700 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		652D4AE1268DC12A007D0700 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		653F397427A68F980042AC88 /* AAPLMathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLMathUtilities.m; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				FA6DEC83263D4D8E00ED9775 /* SaveObject.swift */,
 				6548D9E72689CB7F00ABC38C /* SaveObjectString.swift */,
 				52B6D3AE1FDD81C2004B2614 /* DataManger.swift */,
+				650A19FF299106DB00F8B0FE /* CustomSlider.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6543880727A5A7390065E4A7 /* AAPLOpenGLViewController.m in Sources */,
+				650A1A00299106DB00F8B0FE /* CustomSlider.swift in Sources */,
 				52B6D39B1FDD80F0004B2614 /* AppDelegate.swift in Sources */,
 				653F397527A68F980042AC88 /* AAPLMathUtilities.m in Sources */,
 				6543880A27A5AB7D0065E4A7 /* AAPLOpenGLRenderer.m in Sources */,
@@ -522,12 +526,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R7K637DW83;
 				INFOPLIST_FILE = "$(SRCROOT)/Clothes/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.4.4;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.romans.clothes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/motoricallc/Documents/iOs/clothes/Clothes/OpenGL/MotoricaStart-Bridging-Header.h";
@@ -544,12 +548,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R7K637DW83;
 				INFOPLIST_FILE = "$(SRCROOT)/Clothes/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.4.4;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.romans.clothes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/motoricallc/Documents/iOs/clothes/Clothes/OpenGL/MotoricaStart-Bridging-Header.h";

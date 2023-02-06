@@ -14,11 +14,46 @@ import Charts
     
     @IBOutlet weak var statusImage: UIImageView!
     @IBOutlet weak var deviceName: UILabel!
+    
+    @IBOutlet weak var titleBreast: UILabel!
     @IBOutlet weak var breastStack: UIStackView!
     @IBOutlet weak var realValueBreast: UIButton!
     @IBOutlet weak var targetValueBreast: UIButton!
-//    @IBOutlet weak var onOffButton: UIButton!
     @IBOutlet weak var onOffSwitchBreast: UISwitch!
+    @IBOutlet weak var sliderBreast: UISlider!
+    @IBOutlet weak var activationStatusBreast: UILabel!
+    
+    @IBOutlet weak var titleBack: UILabel!
+    @IBOutlet weak var backStack: UIStackView!
+    @IBOutlet weak var realValueBack: UIButton!
+    @IBOutlet weak var targetValueBack: UIButton!
+    @IBOutlet weak var onOffSwitchBack: UISwitch!
+    @IBOutlet weak var sliderBack: UISlider!
+    @IBOutlet weak var activationStatusBack: UILabel!
+    
+    @IBOutlet weak var titleShoulders: UILabel!
+    @IBOutlet weak var shouldersStack: UIStackView!
+    @IBOutlet weak var realValueShoulders: UIButton!
+    @IBOutlet weak var targetValueShoulders: UIButton!
+    @IBOutlet weak var onOffSwitchShoulders: UISwitch!
+    @IBOutlet weak var sliderShoulders: UISlider!
+    @IBOutlet weak var activationStatusShoulders: UILabel!
+    
+    @IBOutlet weak var titleBelt: UILabel!
+    @IBOutlet weak var beltStack: UIStackView!
+    @IBOutlet weak var realValueBelt: UIButton!
+    @IBOutlet weak var targetValueBelt: UIButton!
+    @IBOutlet weak var onOffSwitchBelt: UISwitch!
+    @IBOutlet weak var sliderBelt: UISlider!
+    @IBOutlet weak var activationStatusBelt: UILabel!
+    
+    
+    @IBOutlet weak var voiceStack: UIStackView!
+    
+    @IBOutlet weak var batteryStack: UIStackView!
+    @IBOutlet weak var titleBattery: UILabel!
+    @IBOutlet weak var batteryPercent: UILabel!
+    
     
     let connectStatus = UIImage(named:"connect_status")!
     let disconnectStatus = UIImage(named:"disconnect_status")!
@@ -55,81 +90,57 @@ import Charts
         
         loadDataString()
         initUI()
-        
-        
+         
         NotificationCenter.default.addObserver(self, selector: #selector(updatingUINotification), name: .notificationReseiveBLEData, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(checkStateConnection), name: .notificationCheckStateConnection, object: nil)
     }
     
-    
-    @objc func updateUI(notification: Notification) {
-        guard let dataState = notification.userInfo,
-              let resultDialog = dataState["resultDialog"] as? String
-        else {
-            print("selectScaleResult else return")
-            return
-        }
-        if (resultDialog == "selectScaleAccept") {
-            performSegue(withIdentifier: "showSceleAcceptVC", sender: nil)
-        }
-        if (resultDialog == "acceptSelectScaleCancel") {
-            performSegue(withIdentifier: "showSelectScaleVC", sender: nil)
-        }
-        if (resultDialog == "acceptSelectScaleAccept") {
-            //отправка команды с размером протеза
-            loadDataString()
-            for item in savingParametrsMassString
-            {
-                if (item.key == SensorsViewController.sampleGattAttributes.SCALE) {
-                    let scale: UInt8 = UInt8(item.value) ?? 0x04
-                    let data = Data([scale])
-                }
-            }
-        }
-    }
+    //тут дописать приём остальных данных
     @objc func updatingUINotification(notification: Notification) {
         guard let dataForWrite = notification.userInfo,
-            let set_one_channel = dataForWrite["set_one_channel"] as? String,
-            let gesture_use_num = dataForWrite["gesture_use_num"] as? String,
-            let gesture_switching_by_sensors = dataForWrite["gesture_switching_by_sensors"] as? String,
-            let time_at_rest = dataForWrite["time_at_rest"] as? String,
-            let reseivedFirstNotifyData = dataForWrite["reseivedFirstNotifyData"] as? String
+              let real_temperature = dataForWrite["real_temperature"] as? String,
+              let target_temperature = dataForWrite["target_temperature"] as? String,
+              let operation_mode = dataForWrite["operation_mode"] as? String,
+              let status_modules = dataForWrite["status_modules"] as? String
         else { return }
 
         
-        for item in savingParametrsMassString
-        {
-            if (item.key == SensorsViewController.sampleGattAttributes.SET_ONE_CHANNEL_NEW) {
-                if (Int(item.value) != Int(set_one_channel)) {
-                    print("обновили данные одноканального управления")
-                    saveDataString(key: item.key, value: String(Int(set_one_channel)!))
+        for item in savingParametrsMassString {
+            if (item.key == SensorsViewController.sampleGattAttributes.GET_REAL_TEMPERATURE_USE) {
+                if (item.value != real_temperature){
+                    print("обновили данные реальной температуры: "+real_temperature)
+                    saveDataString(key: item.key, value: String(real_temperature))
                     loadDataString()
+                    initUI()
                 }
             }
-            if (item.key == SensorsViewController.sampleGattAttributes.GESTURE_USE_NUM) {
-                if (Int(item.value) != Int(gesture_use_num)) {
-                    print("обновили данные активного жеста")
-                    saveDataString(key: item.key, value: String(Int(gesture_use_num)!))
+            if (item.key == SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE) {
+                if (item.value != target_temperature){
+                    print("обновили данные целевой температуры: "+target_temperature)
+                    saveDataString(key: item.key, value: String(target_temperature))
                     loadDataString()
+                    initUI()
                 }
             }
-            if (item.key == SensorsViewController.sampleGattAttributes.SWITCH_BY_SENSORS) {
-                if (Int(item.value) != Int(gesture_switching_by_sensors)) {
-                    print("Int(item.value)=\(String(describing: Int(item.value)))   Int(gesture_switching_by_sensors)=\(String(describing: Int(gesture_switching_by_sensors)))")
-                    print("обновили данные переключения жестов датчиками (включение/отключение режима)")
-                    saveDataString(key: item.key, value: String(Int(gesture_switching_by_sensors)!))
+            if (item.key == SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE ) {
+                if (item.value != operation_mode){
+                    print("обновили данные режима работы: "+operation_mode)
+                    saveDataString(key: item.key, value: String(operation_mode))
                     loadDataString()
+                    initUI()
                 }
             }
-            if (item.key == SensorsViewController.sampleGattAttributes.TIME_AT_REST) {
-                if (Int(item.value) != Int(time_at_rest)) {
-                    print("обновили данные переключения жестов датчиками (время зажима датчика открытия)")
-                    saveDataString(key: item.key, value: String(Int(time_at_rest)!))
+            if (item.key == SensorsViewController.sampleGattAttributes.GET_STATUS_MODULES_USE ) {
+                if (item.value != status_modules){
+                    print("обновили данные статуса модулей: "+status_modules)
+                    saveDataString(key: item.key, value: String(status_modules))
                     loadDataString()
+                    initUI()
                 }
             }
         }
     }
+    
     @objc func checkStateConnection(notification: Notification) {
         guard let dataState = notification.userInfo,
             let state = dataState["state"] as? String
@@ -145,59 +156,204 @@ import Charts
         }
     }
 
-    
     // MARK: - обработка взаимодействия с UI
+    @IBAction func activateBreast(_ sender: UISwitch) {
+        
+    }
+    @IBAction func activateBack(_ sender: UISwitch) {
+        var data = Data([])
+        if (sender.isOn) {
+            data = Data([0x00, 0x01, 0x00, 0x00])
+        } else {
+            data = Data([0x00, 0x00, 0x00, 0x00])
+        }
+        SensorsViewController.myInteractiveQueueComand(dataForWrite: data, characteristic: SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE, type: SensorsViewController.sampleGattAttributes.WRITE)
+    }
+    @IBAction func activateShoulders(_ sender: UISwitch) {
+        readAllData ()
+    }
+    @IBAction func activateBelt(_ sender: UISwitch) {
+    }
+    @IBAction func activateVoice(_ sender: UISwitch) {
+    }
     
+    private func readAllData () {
+        SensorsViewController.myInteractiveQueueComand(dataForWrite: Data([]), characteristic: SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE, type: SensorsViewController.sampleGattAttributes.READ)
+        SensorsViewController.myInteractiveQueueComand(dataForWrite: Data([]), characteristic: SensorsViewController.sampleGattAttributes.GET_REAL_TEMPERATURE_USE, type: SensorsViewController.sampleGattAttributes.READ)
+        SensorsViewController.myInteractiveQueueComand(dataForWrite: Data([]), characteristic: SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE, type: SensorsViewController.sampleGattAttributes.READ)
+        SensorsViewController.myInteractiveQueueComand(dataForWrite: Data([]), characteristic: SensorsViewController.sampleGattAttributes.GET_STATUS_MODULES_USE, type: SensorsViewController.sampleGattAttributes.READ)
+    }
     
-    // MARK: - работа с фоном
-    override func viewDidLayoutSubviews() {}
     // MARK: - UI stule
     private func setupeButton (button: UIButton) {
         button.layer.cornerRadius = 15
-        button.titleLabel?.text = "100"
         button.titleLabel?.font =  UIFont(name: "OpenSans-Bold", size: 12)
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.black.cgColor
     }
-    private func setupeSwitch (mySwitch: UISwitch) {
+    private func setupeSwitch (mySwitch: UISwitch, colorBorder: CGColor?) {
         mySwitch.layer.cornerRadius = 15
         mySwitch.layer.borderWidth = 2
-        mySwitch.layer.borderColor = UIColor.black.cgColor
+        mySwitch.layer.borderColor = colorBorder
     }
     private func setupeStakeView (stack: UIStackView) {
         stack.layer.cornerRadius = 21
         stack.layer.borderWidth = 2
         stack.layer.borderColor = UIColor.black.cgColor
     }
-    // MARK: -
+    // MARK: - инициализация UI
     private func initUI() {
         setupeButton(button: realValueBreast)
         setupeButton(button: targetValueBreast)
-//        setupeSwitch(mySwitch: onOffSwitch)
         setupeStakeView (stack: breastStack)
+        
+        setupeButton(button: realValueBack)
+        setupeButton(button: targetValueBack)
+        setupeStakeView (stack: backStack)
+        
+        setupeButton(button: realValueShoulders)
+        setupeButton(button: targetValueShoulders)
+        setupeStakeView (stack: shouldersStack)
+        
+        setupeButton(button: realValueBelt)
+        setupeButton(button: targetValueBelt)
+        setupeStakeView (stack: beltStack)
+        
+        setupeStakeView(stack: voiceStack)
+        
+        setupeStakeView(stack: batteryStack)
+        
+        var realTemperatureOn: Bool = false
+        var targetTemperatureOn: Bool = false
+        var operationModeOn: Bool = false
+        var statusOn: Bool = false
+        // проверка, есть ли значения переменных в памяти
+        for item in savingParametrsMassString
+        {
+            if (item.key == SensorsViewController.sampleGattAttributes.GET_REAL_TEMPERATURE_USE) {
+                realTemperatureOn = true
+            }
+            if (item.key == SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE) {
+                targetTemperatureOn = true
+            }
+            if (item.key == SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE) {
+                operationModeOn = true
+            }
+            if (item.key == SensorsViewController.sampleGattAttributes.GET_STATUS_MODULES_USE) {
+                statusOn = true
+            }
+        }
+        
+        if (!realTemperatureOn) {
+            saveDataString(key: SensorsViewController.sampleGattAttributes.GET_REAL_TEMPERATURE_USE, value: String("1 2 3 4"))
+            loadDataString()
+        }
+        if (!targetTemperatureOn) {
+            saveDataString(key: SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE, value: String("0 1 2 3"))
+            loadDataString()
+        }
+        if (!operationModeOn) {
+            saveDataString(key: SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE, value: String("0 1 2 0"))
+            loadDataString()
+        }
+        if (!statusOn) {
+            saveDataString(key: SensorsViewController.sampleGattAttributes.GET_STATUS_MODULES_USE, value: String("0 1 0 1"))
+            loadDataString()
+        }
+        
         for item in savingParametrsMassString
         {
             if (item.key == SensorsViewController.sampleGattAttributes.DEVICE_NAME){
-            if (savingDeviceName != item.value) {
-                deviceName.text = item.value
-                savingDeviceName = item.value
-                deviceName.text = savingDeviceName
-                if ( savingDeviceName == "FEST-A" || savingDeviceName == "BT05" || savingDeviceName == "Redmi" ||
-                        savingDeviceName == "FEST-F" || savingDeviceName == SensorsViewController.sampleGattAttributes.FESTH_NAME || savingDeviceName == SensorsViewController.sampleGattAttributes.FESTX_NAME) {
-                    if (savingDeviceName == SensorsViewController.sampleGattAttributes.FESTX_NAME) {
-                        print("FEST-X activated")
-                        saveDataString(key: SensorsViewController.sampleGattAttributes.USE_MULTIGRAB_FESTX, value: String(1))
-                    }
-                    if (savingDeviceName == SensorsViewController.sampleGattAttributes.FESTH_NAME) {
-                        saveDataString(key: SensorsViewController.sampleGattAttributes.USE_MULTIGRAB_FESTH, value: String(1))
-                    }
-                    saveDataString(key: SensorsViewController.sampleGattAttributes.USE_MULTIGRAB, value: SensorsViewController.sampleGattAttributes.USE)
-                    print("Multigrib mode activated!")
-                } else {
-                    saveDataString(key: SensorsViewController.sampleGattAttributes.USE_MULTIGRAB, value: String(0))
+                if (savingDeviceName != item.value) {
+                    savingDeviceName = item.value
+                    deviceName.text = savingDeviceName
+                }
+            }
+            if (item.key == SensorsViewController.sampleGattAttributes.GET_REAL_TEMPERATURE_USE) {
+                let separatedString = item.value.components(separatedBy: " ")
+                print("separatedString "+separatedString[0])
+                
+                if (separatedString.count >= 4){
+                    realValueBreast.setTitle(separatedString[0] , for: .normal)
+                    realValueBack.setTitle(separatedString[1] , for: .normal)
+                    realValueShoulders.setTitle(separatedString[2] , for: .normal)
+                    realValueBelt.setTitle(separatedString[3] , for: .normal)
+                }
+            }
+            if (item.key == SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE) {
+                let separatedString = item.value.components(separatedBy: " ")
+                print("separatedString "+separatedString[0])
+                
+                if (separatedString.count >= 4){
+                    targetValueBreast.setTitle(separatedString[0] , for: .normal)
+                    targetValueBack.setTitle(separatedString[1] , for: .normal)
+                    targetValueShoulders.setTitle(separatedString[2] , for: .normal)
+                    targetValueBelt.setTitle(separatedString[3] , for: .normal)
+                    
+                    sliderBreast.value = Float(separatedString[0]) ?? 0
+                    sliderBack.value = Float(separatedString[1]) ?? 0
+                    sliderShoulders.value = Float(separatedString[2]) ?? 0
+                    sliderBelt.value = Float(separatedString[3]) ?? 0
+                }
+            }
+            if (item.key == SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE) {
+                let separatedString = item.value.components(separatedBy: " ")
+                print("separatedString "+separatedString[0])
+      
+                if (separatedString.count >= 4){
+                    setOperationMode(lable: activationStatusBreast, mySwitch: onOffSwitchBreast, mode: separatedString[0])
+                    setOperationMode(lable: activationStatusBack, mySwitch: onOffSwitchBack, mode: separatedString[1])
+                    setOperationMode(lable: activationStatusShoulders, mySwitch: onOffSwitchShoulders, mode: separatedString[2])
+                    setOperationMode(lable: activationStatusBelt, mySwitch: onOffSwitchBelt, mode: separatedString[3])
+                }
+            }
+            if (item.key == SensorsViewController.sampleGattAttributes.GET_STATUS_MODULES_USE) {
+                let separatedString = item.value.components(separatedBy: " ")
+                print("separatedString "+separatedString[0])
+                
+                if (separatedString.count >= 4){
+                    setStatus(lable: titleBreast, mySwitch: onOffSwitchBreast, mode: separatedString[0] )
+                    setStatus(lable: titleBack, mySwitch: onOffSwitchBack, mode: separatedString[1])
+                    setStatus(lable: titleShoulders, mySwitch: onOffSwitchShoulders, mode: separatedString[2])
+                    setStatus(lable: titleBelt, mySwitch: onOffSwitchBelt, mode: separatedString[3])
                 }
             }
         }
+    }
+    private func setStatus(lable: UILabel, mySwitch: UISwitch, mode: String) {
+        switch mode {
+        case "0":
+            if (lable.text?.components(separatedBy: " ").count ?? 2 > 1){
+                lable.text = lable.text?.components(separatedBy: " ")[0]
+            }
+            lable.textColor = .black
+            mySwitch.isEnabled = true
+        case "1":
+            if (lable.text?.components(separatedBy: " ").count ?? 2 < 2){
+                lable.text! = (lable.text ?? "Блок")+" (неисправен)"
+            }
+            lable.textColor = .red
+            mySwitch.isEnabled = false
+        default:
+            return
+        }
+    }
+    private func setOperationMode(lable: UILabel, mySwitch: UISwitch, mode: String) {
+        switch mode {
+        case "0":
+            lable.text = ""
+            mySwitch.isOn = false
+            mySwitch.onTintColor = .black
+        case "1":
+            lable.text = "включён"
+            mySwitch.isOn = true
+            mySwitch.onTintColor = .black
+        case "2":
+            lable.text = "ожидание"
+            mySwitch.isOn = true
+            mySwitch.onTintColor = UIColor(named: "dark_yellow")
+        default:
+            return
         }
     }
     
@@ -215,19 +371,21 @@ import Charts
     }
     
     
+    
+    
     // MARK: - очередь команд
-    @objc static func myInteractiveQueueComand(dataForWrite: Data, characteristic: String, type: String, myCase: String) {
+    @objc static func myInteractiveQueueComand(dataForWrite: Data, characteristic: String, type: String) {
         inactiveQueue.async {
             self.semafore.wait()
             self.flagReadData = false
-            self.comandQueue(dataForWrite: dataForWrite, characteristic: characteristic, type: type, myCase: myCase)
+            self.comandQueue(dataForWrite: dataForWrite, characteristic: characteristic, type: type)
             self.semafore.signal()
         }
         inactiveQueue.activate()
     }
     // MARK:  функция при вызове начинает генерировать команды
     // MARK:  на чтение данных и дбавлять их в очередь команд
-    func myInteractiveQueueReadData(dataForWrite: Data, characteristic: String, type: String, myCase: String) {
+    func myInteractiveQueueReadData(dataForWrite: Data, characteristic: String, type: String) {
         SensorsViewController.inactiveQueue.async { [self] in
             while (SensorsViewController.flagReadData && pauseReadData) {
                 usleep(delayForReadData)
@@ -236,14 +394,16 @@ import Charts
         SensorsViewController.inactiveQueue.activate()
     }
     static let operationQueue = OperationQueue()
-    static func comandQueue(dataForWrite: Data, characteristic: String, type: String, myCase: String) {
+    static func comandQueue(dataForWrite: Data, characteristic: String, type: String) {
         let operation1 = BlockOperation() { [self] in
             usleep(queueInterval)
             //TODO код запроса информационных данных
             if (type == sampleGattAttributes.WRITE) {
-                
+                print("write")
+                writeDataTo(dataForWrite: dataForWrite, characteristic: characteristic)
             } else if (type == sampleGattAttributes.READ) {
                 print("read")
+                readDataFrom(characteristic: characteristic)
             }
         }
         operation1.completionBlock = { [self] in
@@ -252,6 +412,17 @@ import Charts
             }
         }
         operationQueue.addOperations([operation1], waitUntilFinished: true)
+    }
+    static func writeDataTo (dataForWrite: Data, characteristic: String) {
+        self.dataForCommunicate["byteArray"] = dataForWrite.hexEncodedString()
+        self.dataForCommunicate["characteristic"] = characteristic
+        self.dataForCommunicate["type"] = SensorsViewController.sampleGattAttributes.WRITE
+        NotificationCenter.default.post(name: .notificationFromSensorsViewController, object: nil, userInfo: self.dataForCommunicate)
+    }
+    static func readDataFrom (characteristic: String) {
+        SensorsViewController.dataForCommunicate["characteristic"] = characteristic
+        SensorsViewController.dataForCommunicate["type"] = SensorsViewController.sampleGattAttributes.READ
+        NotificationCenter.default.post(name: .notificationFromSensorsViewController, object: nil, userInfo: SensorsViewController.dataForCommunicate)
     }
 }
 

@@ -60,7 +60,6 @@ import Charts
 
     var firstInit: Bool = true
 
-
     var count: Int = 0
     var countTest: Int = 0
     static let sampleGattAttributes = SampleGattAttributes()
@@ -75,8 +74,12 @@ import Charts
     static let queueInterval: UInt32 = 110000// большее количество команд, чем она отдаёт
     static let inactiveQueue = DispatchQueue(label: "My queue", attributes: [.concurrent, .initiallyInactive])
     static let semafore = DispatchSemaphore(value: 1)
-
- 
+    
+    
+    var realTemperature = ""
+    var targetTemperature = ""
+    var operationMode = ""
+    var statusModules = ""
     
     private var savingDeviceName: String = "...."
     
@@ -161,9 +164,11 @@ import Charts
         
     }
     @IBAction func activateBack(_ sender: UISwitch) {
+        let separatedString = operationMode.components(separatedBy: " ")
+        
         var data = Data([])
         if (sender.isOn) {
-            data = Data([0x00, 0x01, 0x00, 0x00])
+            data = Data([0, 1, 0, 0])
         } else {
             data = Data([0x00, 0x00, 0x00, 0x00])
         }
@@ -270,6 +275,7 @@ import Charts
                 }
             }
             if (item.key == SensorsViewController.sampleGattAttributes.GET_REAL_TEMPERATURE_USE) {
+                realTemperature = item.value
                 let separatedString = item.value.components(separatedBy: " ")
                 print("separatedString "+separatedString[0])
                 
@@ -281,6 +287,7 @@ import Charts
                 }
             }
             if (item.key == SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE) {
+                targetTemperature = item.value
                 let separatedString = item.value.components(separatedBy: " ")
                 print("separatedString "+separatedString[0])
                 
@@ -297,6 +304,7 @@ import Charts
                 }
             }
             if (item.key == SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE) {
+                operationMode = item.value
                 let separatedString = item.value.components(separatedBy: " ")
                 print("separatedString "+separatedString[0])
       
@@ -308,6 +316,7 @@ import Charts
                 }
             }
             if (item.key == SensorsViewController.sampleGattAttributes.GET_STATUS_MODULES_USE) {
+                statusModules = item.value
                 let separatedString = item.value.components(separatedBy: " ")
                 print("separatedString "+separatedString[0])
                 

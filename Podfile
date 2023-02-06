@@ -5,8 +5,5 @@ target 'Clothes' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Clothes
-  pod 'Charts', '~> 3.2.0'
-
   
 end

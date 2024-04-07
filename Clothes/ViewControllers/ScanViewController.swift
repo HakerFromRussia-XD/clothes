@@ -16,7 +16,7 @@ import CoreBluetooth
     
     @IBAction func unwindToThisScanViewController (sender: UIStoryboardSegue){}
     
-    var dataForSensorsViewController = ["reseivedFirstNotifyData":"false", "real_temperature":"", "target_temperature":"", "operation_mode":"", "status_modules":""]
+    var dataForSensorsViewController = ["reseivedFirstNotifyData":"false", "real_temperature":"", "target_temperature":"", "operation_mode":"", "status_modules":"", "battery_charge":"", "voice":""]
     var dataState = ["state":"0"]
     let sampleGattAttributes = SampleGattAttributes()
     var reconecting: Bool = false
@@ -33,7 +33,7 @@ import CoreBluetooth
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         centralManager.delegate = self
-        fukeDeviceConnect()
+//        fukeDeviceConnect()
     }
 
 
@@ -135,7 +135,7 @@ import CoreBluetooth
 
         // Работа с характеристикой нотификации и чтения
         print ("Получили данные из характеристики: "+characteristic.uuid.uuidString)
-        if (characteristic.uuid.uuidString == sampleGattAttributes.GET_REAL_TEMPERATURE_USE) {
+        if (characteristic.uuid.uuidString == sampleGattAttributes.GET_REAL_TEMPERATURE) {
             print("Получили данные из характеристики GET_REAL_TEMPERATURE")
             if let data = characteristic.value {
                 data.withUnsafeBytes({(bytes: UnsafePointer<UInt8>) -> Void in
@@ -145,7 +145,7 @@ import CoreBluetooth
                 NotificationCenter.default.post(name: .notificationReseiveBLEData, object: nil, userInfo: self.dataForSensorsViewController)
             }
         }
-        if (characteristic.uuid.uuidString == sampleGattAttributes.SET_TARGET_TEMPERATURE_USE) {
+        if (characteristic.uuid.uuidString == sampleGattAttributes.SET_TARGET_TEMPERATURE) {
             print("Получили данные из характеристики SET_TARGET_TEMPERATURE")
             if let data = characteristic.value {
                 data.withUnsafeBytes({(bytes: UnsafePointer<UInt8>) -> Void in
@@ -155,7 +155,7 @@ import CoreBluetooth
                 NotificationCenter.default.post(name: .notificationReseiveBLEData, object: nil, userInfo: self.dataForSensorsViewController)
             }
         }
-        if (characteristic.uuid.uuidString == sampleGattAttributes.SET_OPERATION_MODE_USE) {
+        if (characteristic.uuid.uuidString == sampleGattAttributes.SET_OPERATION_MODE) {
             print("Получили данные из характеристики SET_OPERATION_MODE")
             if let data = characteristic.value {
                 data.withUnsafeBytes({(bytes: UnsafePointer<UInt8>) -> Void in
@@ -165,17 +165,44 @@ import CoreBluetooth
                 NotificationCenter.default.post(name: .notificationReseiveBLEData, object: nil, userInfo: self.dataForSensorsViewController)
             }
         }
-        if (characteristic.uuid.uuidString == sampleGattAttributes.GET_STATUS_MODULES_USE) {
+        if (characteristic.uuid.uuidString == sampleGattAttributes.GET_STATUS_MODULES) {
             print("Получили данные из характеристики GET_STATUS_MODULES")
+//            if let data = characteristic.value {
+//                data.withUnsafeBytes({(bytes: UnsafePointer<UInt8>) -> Void in
+//                    self.dataForSensorsViewController["status_modules"] = String(Int(bytes[0]))+" "+String(Int(bytes[1]))+" "+String(Int(bytes[2]))+" "+String(Int(bytes[3]))
+//                })
+//
+//                NotificationCenter.default.post(name: .notificationReseiveBLEData, object: nil, userInfo: self.dataForSensorsViewController)
+//            }
+        }
+        if (characteristic.uuid.uuidString == sampleGattAttributes.GET_BATTERY_CHARGE_USE) {
+            print("Получили данные из характеристики GET_BATTERY_CHARGE")
             if let data = characteristic.value {
                 data.withUnsafeBytes({(bytes: UnsafePointer<UInt8>) -> Void in
-                    self.dataForSensorsViewController["status_modules"] = String(Int(bytes[0]))+" "+String(Int(bytes[1]))+" "+String(Int(bytes[2]))+" "+String(Int(bytes[3]))
+                    self.dataForSensorsViewController["battery_charge"] = String(Int(bytes[0]))
                 })
                 
                 NotificationCenter.default.post(name: .notificationReseiveBLEData, object: nil, userInfo: self.dataForSensorsViewController)
             }
         }
-        
+        if (characteristic.uuid.uuidString == sampleGattAttributes.SET_VOICE) {
+            print("Получили данные из характеристики SET_VOICE")
+            if let data = characteristic.value {
+                data.withUnsafeBytes({(bytes: UnsafePointer<UInt8>) -> Void in
+                    self.dataForSensorsViewController["voice"] = String(Int(bytes[0]))
+                })
+                
+                NotificationCenter.default.post(name: .notificationReseiveBLEData, object: nil, userInfo: self.dataForSensorsViewController)
+            }
+        }
+        if (characteristic.uuid.uuidString == sampleGattAttributes.GET_REAL_TEMPERATURE) {
+//            print("Получили данные из характеристики 0001")
+            if let data = characteristic.value {
+                data.withUnsafeBytes({(bytes: UnsafePointer<UInt8>) -> Void in
+                    print("Получили данные из характеристики 0001  "+String(Int(bytes[0])))
+                })
+            }
+        }
     }
 
     

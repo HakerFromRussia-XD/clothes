@@ -47,12 +47,12 @@ import Charts
     @IBOutlet weak var sliderBelt: UISlider!
     @IBOutlet weak var activationStatusBelt: UILabel!
     
-    
     @IBOutlet weak var voiceStack: UIStackView!
-    
+    @IBOutlet weak var voiceSwitch: UISwitch!
+
     @IBOutlet weak var batteryStack: UIStackView!
-    @IBOutlet weak var titleBattery: UILabel!
     @IBOutlet weak var batteryPercent: UILabel!
+    @IBOutlet weak var batterySlider: CustomSlider!
     
     
     let connectStatus = UIImage(named:"connect_status")!
@@ -80,6 +80,8 @@ import Charts
     var targetTemperature = ""
     var operationMode = ""
     var statusModules = ""
+    var batteryCharge = ""
+    var voice = ""
     
     private var savingDeviceName: String = "...."
     
@@ -104,7 +106,9 @@ import Charts
               let real_temperature = dataForWrite["real_temperature"] as? String,
               let target_temperature = dataForWrite["target_temperature"] as? String,
               let operation_mode = dataForWrite["operation_mode"] as? String,
-              let status_modules = dataForWrite["status_modules"] as? String
+              let status_modules = dataForWrite["status_modules"] as? String,
+              let battery_charge = dataForWrite["battery_charge"] as? String,
+              let voice = dataForWrite["voice"] as? String
         else { return }
 
         
@@ -141,6 +145,23 @@ import Charts
                     initUI()
                 }
             }
+            if (item.key == SensorsViewController.sampleGattAttributes.GET_BATTERY_CHARGE_USE ) {
+                if (item.value != battery_charge){
+                    print("обновили данные заряда батареи: "+battery_charge)
+                    saveDataString(key: item.key, value: String(battery_charge))
+                    loadDataString()
+                    initUI()
+                }
+            }
+            if (item.key == SensorsViewController.sampleGattAttributes.SET_VOICE_USE ) {
+                if (item.value != voice){
+                    print("обновили данные голоса: "+voice)
+                    saveDataString(key: item.key, value: String(voice))
+                    loadDataString()
+                    initUI()
+                }
+            }
+            
         }
     }
     
@@ -161,32 +182,248 @@ import Charts
 
     // MARK: - обработка взаимодействия с UI
     @IBAction func activateBreast(_ sender: UISwitch) {
+        var separatedString = operationMode.components(separatedBy: " ")
         
+        if (separatedString.count >= SensorsViewController.sampleGattAttributes.NUMBER_MODULES) {
+            var data = Data([])
+            if (sender.isOn) {
+                separatedString[0] = "1"
+            } else {
+                separatedString[0] = "0"
+            }
+            for i in 0...(SensorsViewController.sampleGattAttributes.NUMBER_MODULES-1) {
+                data.append(UInt8(separatedString[i])!)
+            }
+            SensorsViewController.myInteractiveQueueComand(dataForWrite: data, characteristic: SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE, type: SensorsViewController.sampleGattAttributes.WRITE)
+            saveDataString(key: SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE,
+                           value: separatedString[0]+" "+separatedString[1]+" "+separatedString[2]+" "+separatedString[3])
+            loadDataString()
+            readAllData ()
+        }
     }
     @IBAction func activateBack(_ sender: UISwitch) {
-        let separatedString = operationMode.components(separatedBy: " ")
-        
-        var data = Data([])
-        if (sender.isOn) {
-            data = Data([0, 1, 0, 0])
-        } else {
-            data = Data([0x00, 0x00, 0x00, 0x00])
+        var separatedString = operationMode.components(separatedBy: " ")
+    
+        if (separatedString.count >= SensorsViewController.sampleGattAttributes.NUMBER_MODULES) {
+            var data = Data([])
+            if (sender.isOn) {
+                separatedString[1] = "1"
+            } else {
+                separatedString[1] = "0"
+            }
+            for i in 0...(SensorsViewController.sampleGattAttributes.NUMBER_MODULES-1) {
+                data.append(UInt8(separatedString[i])!)
+            }
+            SensorsViewController.myInteractiveQueueComand(dataForWrite: data, characteristic: SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE, type: SensorsViewController.sampleGattAttributes.WRITE)
+            saveDataString(key: SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE,
+                           value: separatedString[0]+" "+separatedString[1]+" "+separatedString[2]+" "+separatedString[3])
+            loadDataString()
+            readAllData ()
         }
-        SensorsViewController.myInteractiveQueueComand(dataForWrite: data, characteristic: SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE, type: SensorsViewController.sampleGattAttributes.WRITE)
     }
     @IBAction func activateShoulders(_ sender: UISwitch) {
-        readAllData ()
+        var separatedString = operationMode.components(separatedBy: " ")
+        
+        if (separatedString.count >= SensorsViewController.sampleGattAttributes.NUMBER_MODULES) {
+            var data = Data([])
+            if (sender.isOn) {
+                separatedString[2] = "1"
+            } else {
+                separatedString[2] = "0"
+            }
+            for i in 0...(SensorsViewController.sampleGattAttributes.NUMBER_MODULES-1) {
+                data.append(UInt8(separatedString[i])!)
+            }
+            SensorsViewController.myInteractiveQueueComand(dataForWrite: data, characteristic: SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE, type: SensorsViewController.sampleGattAttributes.WRITE)
+            saveDataString(key: SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE,
+                           value: separatedString[0]+" "+separatedString[1]+" "+separatedString[2]+" "+separatedString[3])
+            loadDataString()
+            readAllData ()
+        }
     }
     @IBAction func activateBelt(_ sender: UISwitch) {
+        var separatedString = operationMode.components(separatedBy: " ")
+        
+        if (separatedString.count >= SensorsViewController.sampleGattAttributes.NUMBER_MODULES) {
+            var data = Data([])
+            if (sender.isOn) {
+                separatedString[3] = "1"
+            } else {
+                separatedString[3] = "0"
+            }
+            for i in 0...(SensorsViewController.sampleGattAttributes.NUMBER_MODULES-1) {
+                data.append(UInt8(separatedString[i])!)
+            }
+            SensorsViewController.myInteractiveQueueComand(dataForWrite: data, characteristic: SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE, type: SensorsViewController.sampleGattAttributes.WRITE)
+            saveDataString(key: SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE,
+                           value: separatedString[0]+" "+separatedString[1]+" "+separatedString[2]+" "+separatedString[3])
+            loadDataString()
+            readAllData ()
+        }
     }
     @IBAction func activateVoice(_ sender: UISwitch) {
+        var data = Data([])
+        if (sender.isOn) {
+            data = Data([1])
+        } else {
+            data = Data([0])
+        }
+        SensorsViewController.myInteractiveQueueComand(dataForWrite: data, characteristic: SensorsViewController.sampleGattAttributes.SET_VOICE_USE, type: SensorsViewController.sampleGattAttributes.WRITE)
+        readAllData ()
     }
+    
+    @IBAction func breastSlide(_ sender: UISlider) {
+        targetValueBreast.titleLabel?.text = String(Int(sender.value))
+        var separatedString = targetTemperature.components(separatedBy: " ")
+        
+        separatedString[0] = String(Int(sender.value))
+        saveDataString(key: SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE,
+                       value: separatedString[0]+" "+separatedString[1]+" "+separatedString[2]+" "+separatedString[3])
+        loadDataString()
+        initUI()
+    }
+    @IBAction func backSlide(_ sender: UISlider) {
+        targetValueBack.titleLabel?.text = String(Int(sender.value))
+        var separatedString = targetTemperature.components(separatedBy: " ")
+        
+        separatedString[1] = String(Int(sender.value))
+        saveDataString(key: SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE,
+                       value: separatedString[0]+" "+separatedString[1]+" "+separatedString[2]+" "+separatedString[3])
+        loadDataString()
+        initUI()
+    }
+    @IBAction func shouldersSlide(_ sender: UISlider) {
+        targetValueShoulders.titleLabel?.text = String(Int(sender.value))
+        var separatedString = targetTemperature.components(separatedBy: " ")
+        
+        separatedString[2] = String(Int(sender.value))
+        saveDataString(key: SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE,
+                       value: separatedString[0]+" "+separatedString[1]+" "+separatedString[2]+" "+separatedString[3])
+        loadDataString()
+        initUI()
+    }
+    @IBAction func beltSlide(_ sender: UISlider) {
+        targetValueBelt.titleLabel?.text = String(Int(sender.value))
+        var separatedString = targetTemperature.components(separatedBy: " ")
+        
+        separatedString[3] = String(Int(sender.value))
+        saveDataString(key: SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE,
+                       value: separatedString[0]+" "+separatedString[1]+" "+separatedString[2]+" "+separatedString[3])
+        loadDataString()
+        initUI()
+    }
+    
+    
+    @IBAction func breastSlideStop(_ sender: UISlider) {
+        var separatedString = targetTemperature.components(separatedBy: " ")
+        
+        if (separatedString.count >= SensorsViewController.sampleGattAttributes.NUMBER_MODULES) {
+            //изменение загруженных данных
+            separatedString[0] = String(Int(sender.value))
+            
+            
+            //формирование и отправка массива байт для отправки
+            var data = Data([])
+            for i in 0...(SensorsViewController.sampleGattAttributes.NUMBER_MODULES-1) {
+                data.append(UInt8(separatedString[i])!)
+            }
+            SensorsViewController.myInteractiveQueueComand(dataForWrite: data, characteristic: SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE, type: SensorsViewController.sampleGattAttributes.WRITE)
+            
+            //сохранение изменённых нами данных
+            saveDataString(key: SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE,
+                                       value: separatedString[0]+" "+separatedString[1]+" "+separatedString[2]+" "+separatedString[3])
+            loadDataString()
+
+            //запрос обновления всех данных
+            readAllData ()
+        }
+    }
+    @IBAction func backSlideStop(_ sender: UISlider) {
+        var separatedString = targetTemperature.components(separatedBy: " ")
+        
+        if (separatedString.count >= SensorsViewController.sampleGattAttributes.NUMBER_MODULES) {
+            //изменение загруженных данных
+            separatedString[1] = String(Int(sender.value))
+            
+            
+            //формирование и отправка массива байт для отправки
+            var data = Data([])
+            for i in 0...(SensorsViewController.sampleGattAttributes.NUMBER_MODULES-1) {
+                data.append(UInt8(separatedString[i])!)
+            }
+            SensorsViewController.myInteractiveQueueComand(dataForWrite: data, characteristic: SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE, type: SensorsViewController.sampleGattAttributes.WRITE)
+            
+            //сохранение изменённых нами данных
+            saveDataString(key: SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE,
+                                       value: separatedString[0]+" "+separatedString[1]+" "+separatedString[2]+" "+separatedString[3])
+            loadDataString()
+
+            //запрос обновления всех данных
+            readAllData ()
+        }
+    }
+    @IBAction func shouldersSlideStop(_ sender: UISlider) {
+        var separatedString = targetTemperature.components(separatedBy: " ")
+        
+        if (separatedString.count >= SensorsViewController.sampleGattAttributes.NUMBER_MODULES) {
+            //изменение загруженных данных
+            separatedString[2] = String(Int(sender.value))
+            
+            
+            //формирование и отправка массива байт для отправки
+            var data = Data([])
+            for i in 0...(SensorsViewController.sampleGattAttributes.NUMBER_MODULES-1) {
+                data.append(UInt8(separatedString[i])!)
+            }
+            SensorsViewController.myInteractiveQueueComand(dataForWrite: data, characteristic: SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE, type: SensorsViewController.sampleGattAttributes.WRITE)
+            
+            //сохранение изменённых нами данных
+            saveDataString(key: SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE,
+                                       value: separatedString[0]+" "+separatedString[1]+" "+separatedString[2]+" "+separatedString[3])
+            loadDataString()
+
+            //запрос обновления всех данных
+            readAllData ()
+        }
+    }
+    @IBAction func beltSlideStop(_ sender: UISlider) {
+        var separatedString = targetTemperature.components(separatedBy: " ")
+        
+        if (separatedString.count >= SensorsViewController.sampleGattAttributes.NUMBER_MODULES) {
+            //изменение загруженных данных
+            separatedString[3] = String(Int(sender.value))
+            
+            
+            //формирование и отправка массива байт для отправки
+            var data = Data([])
+            for i in 0...(SensorsViewController.sampleGattAttributes.NUMBER_MODULES-1) {
+                data.append(UInt8(separatedString[i])!)
+            }
+            SensorsViewController.myInteractiveQueueComand(dataForWrite: data, characteristic: SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE, type: SensorsViewController.sampleGattAttributes.WRITE)
+            
+            //сохранение изменённых нами данных
+            saveDataString(key: SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE,
+                                       value: separatedString[0]+" "+separatedString[1]+" "+separatedString[2]+" "+separatedString[3])
+            loadDataString()
+
+            //запрос обновления всех данных
+            readAllData ()
+        }
+    }
+    
+    
+    
+    
+    
     
     private func readAllData () {
         SensorsViewController.myInteractiveQueueComand(dataForWrite: Data([]), characteristic: SensorsViewController.sampleGattAttributes.SET_TARGET_TEMPERATURE_USE, type: SensorsViewController.sampleGattAttributes.READ)
         SensorsViewController.myInteractiveQueueComand(dataForWrite: Data([]), characteristic: SensorsViewController.sampleGattAttributes.GET_REAL_TEMPERATURE_USE, type: SensorsViewController.sampleGattAttributes.READ)
         SensorsViewController.myInteractiveQueueComand(dataForWrite: Data([]), characteristic: SensorsViewController.sampleGattAttributes.SET_OPERATION_MODE_USE, type: SensorsViewController.sampleGattAttributes.READ)
         SensorsViewController.myInteractiveQueueComand(dataForWrite: Data([]), characteristic: SensorsViewController.sampleGattAttributes.GET_STATUS_MODULES_USE, type: SensorsViewController.sampleGattAttributes.READ)
+        
+        SensorsViewController.myInteractiveQueueComand(dataForWrite: Data([]), characteristic: SensorsViewController.sampleGattAttributes.GET_BATTERY_CHARGE_USE, type: SensorsViewController.sampleGattAttributes.READ)
+        SensorsViewController.myInteractiveQueueComand(dataForWrite: Data([]), characteristic: SensorsViewController.sampleGattAttributes.SET_VOICE_USE, type: SensorsViewController.sampleGattAttributes.READ)
     }
     
     // MARK: - UI stule
@@ -232,6 +469,8 @@ import Charts
         var targetTemperatureOn: Bool = false
         var operationModeOn: Bool = false
         var statusOn: Bool = false
+        var batteryChargeOn: Bool = false
+        var voiceOn: Bool = false
         // проверка, есть ли значения переменных в памяти
         for item in savingParametrsMassString
         {
@@ -246,6 +485,12 @@ import Charts
             }
             if (item.key == SensorsViewController.sampleGattAttributes.GET_STATUS_MODULES_USE) {
                 statusOn = true
+            }
+            if (item.key == SensorsViewController.sampleGattAttributes.GET_BATTERY_CHARGE_USE) {
+                batteryChargeOn = true
+            }
+            if (item.key == SensorsViewController.sampleGattAttributes.SET_VOICE_USE) {
+                voiceOn = true
             }
         }
         
@@ -265,6 +510,15 @@ import Charts
             saveDataString(key: SensorsViewController.sampleGattAttributes.GET_STATUS_MODULES_USE, value: String("0 1 0 1"))
             loadDataString()
         }
+        if (!batteryChargeOn) {
+            saveDataString(key: SensorsViewController.sampleGattAttributes.GET_BATTERY_CHARGE_USE, value: String("50"))
+            loadDataString()
+        }
+        if (!voiceOn) {
+            saveDataString(key: SensorsViewController.sampleGattAttributes.SET_VOICE_USE, value: String("0"))
+            loadDataString()
+        }
+        
         
         for item in savingParametrsMassString
         {
@@ -325,6 +579,24 @@ import Charts
                     setStatus(lable: titleBack, mySwitch: onOffSwitchBack, mode: separatedString[1])
                     setStatus(lable: titleShoulders, mySwitch: onOffSwitchShoulders, mode: separatedString[2])
                     setStatus(lable: titleBelt, mySwitch: onOffSwitchBelt, mode: separatedString[3])
+                }
+            }
+            
+            if (item.key == SensorsViewController.sampleGattAttributes.GET_BATTERY_CHARGE_USE) {
+                batterySlider.value = Float(item.value) ?? 50
+                batteryPercent.text = item.value+"%"
+            }
+            if (item.key == SensorsViewController.sampleGattAttributes.SET_VOICE_USE) {
+                switch item.value {
+                case "0":
+                    print("SET_VOICE_USE: "+item.value)
+                    voiceSwitch.isOn = false
+                case "1":
+                    print("SET_VOICE_USE: "+item.value)
+                    voiceSwitch.isOn = true
+                default:
+                    print("SET_VOICE_USE: default "+item.value)
+                    return
                 }
             }
         }
